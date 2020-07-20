@@ -1,0 +1,899 @@
+@font-face {
+    font-family: samsung-one-400;
+    src: url(../fonts/samsung-one-400.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/samsung-one-400.otf) format('opentype'),
+    url(../fonts/samsung-one-400.woff) format('woff'),
+    url(../fonts/samsung-one-400.ttf) format('truetype'),
+    url(../fonts/samsung-one-400.svg#samsung-one-400.eot) format('svg');
+    font-weight: 400;font-style: normal
+}
+@font-face{
+    font-family:samsung-one-700;
+    src:url(../fonts/samsung-one-700.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/samsung-one-700.otf) format("opentype"),
+    url(../fonts/samsung-one-700.woff) format("woff"),
+    url(../fonts/samsung-one-700.ttf) format("truetype"),
+    url(../fonts/samsung-one-700.svg#samsung-one-700) format("svg");
+    font-weight:400; font-style:normal
+}
+@font-face{
+    font-family:Roboto-Regular;
+    src:url(../fonts/Roboto-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/Roboto-Regular.otf) format("opentype"),
+    url(../fonts/Roboto-Regular.woff) format("woff"),
+    url(../fonts/Roboto-Regular.ttf) format("truetype"),
+    url(../fonts/Roboto-Regular.svg#samsung-one-700) format("svg");
+    font-weight:400; font-style:normal
+}
+@font-face{
+    font-family: Montserat-Regular;
+    src:url(../fonts/Montserrat-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/Montserrat-Regular.otf) format("opentype"),
+    url(../fonts/Montserrat-Regular.woff) format("woff"),
+    url(../fonts/Montserrat-Regular.ttf) format("truetype"),
+    url(../fonts/Montserrat-Regular.svg#samsung-one-700) format("svg");
+    font-weight:400; font-style:normal
+}
+body {
+    font-family: Montserat-Regular;
+    font-size: 15px;
+    background:#fff;
+    color: #222;
+    line-height: 1.42857143;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*======== header ==========*/
+.alert{
+    margin-bottom: 0;
+}
+#header{
+    background: #eee7cb;
+    border-bottom: 12px solid #cb4a2a;
+    padding: 50px 0;
+}
+.logo-web{
+    display: none;
+}
+.hot-search{
+    display: flex;
+    float: right;
+}
+.hotline{
+    margin-right: 15px;
+    font-size: 19px;
+    color: #cc4f2f;
+    margin-top: 5px;
+}
+.hotline span{
+    font-weight: bold;
+    color: #c94a29;
+}
+.search{
+    position: relative;
+}
+.search input{
+    border-radius: 20px;
+    padding-left: 35px;
+}
+.search .icon-search{
+    background: url("http://localhost/project.vn/khangmaunhi/public/assets/frontend/img/icon-search.png") no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 18px;
+    border: none;
+    position: absolute;
+    top: 8px;
+    left: 11px;
+}
+.logo{
+    width: 13%;
+    display: inline-block;
+    position: relative;
+    left: 44%;
+    bottom: 12px;
+}
+.menu{
+    clear: both;
+}
+.navigation {
+    display: inline-block;
+    vertical-align: bottom;
+}
+.navigation ul li{
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 100px;
+}
+.navigation ul li:last-child {
+    margin-right: 0;
+}
+.navigation ul li:nth-child(3) {
+    margin-right: 262px;
+}
+.navigation .logo{
+    width: 18%;
+    image-rendering: pixelated;
+}
+.navigation ul li a{
+    font-size: 17px;
+    color: #01362c;
+}
+.navigation ul .active{
+    color: #783606;
+}
+.navigation ul .search-sh{
+    display: none;
+}
+
+
+
+/*====== footer =======*/
+#footer{
+    background: #eee7cb;
+    border-bottom: 40px solid #cb4a2a;
+    clear: both;
+    padding: 50px 0;
+}
+.icon-ft{
+    margin-left: 20px;
+}
+#footer h3{
+    color: #145c4e;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 4px 0;
+}
+.list li a{
+    color: #000000;
+}
+.text_addres img{
+    max-width: 40%;
+    margin-left: 15px;
+    margin-bottom: 13px;
+}
+.mgt-20px{
+    margin-top: 38px;
+}
+.list{
+    height: 143px;
+}
+.list ul, .text-lh p{
+    margin-bottom: 0;
+}
+.icon-lh{
+    border-top: 2px solid #ce6f51;
+    padding-top: 15px;
+}
+.icon-phone{
+    background: url("http://localhost/project.vn/khangmaunhi/public/assets/frontend/img/icon-phone.png") no-repeat;
+    display: inline-block;
+    width: 36px;
+    height: 38px;
+    margin-top: 4px;
+}
+.text-lh{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+.icon-icon{
+    float: right;
+}
+.icon-zalo{
+    background: url("http://localhost/project.vn/khangmaunhi/public/assets/frontend/img/icon-zalo.png") no-repeat;
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    margin-top: 4px;
+}
+.icon-s{
+    background: url("http://localhost/project.vn/khangmaunhi/public/assets/frontend/img/icon-s.png") no-repeat;
+    display: inline-block;
+    width: 36px;
+    height: 35px;
+    margin-top: 4px;
+}
+.icon-face{
+    background: url("http://localhost/project.vn/khangmaunhi/public/assets/frontend/img/icon-fb.png") no-repeat;
+    display: inline-block;
+    width: 18px;
+    height: 35px;
+    margin-top: 4px;
+}
+.icon-zalo, .icon-s, .icon-face{
+    vertical-align: top;
+    margin-left: 15px;
+}
+
+/*======= pageSick ========*/
+.content{
+    background: #ffff;
+}
+.breadcrumb{
+    background: #fff;
+    padding: 0;
+}
+.site-sick{
+    padding-bottom: 33px;
+    border-bottom: 2px solid #c32f09;
+}
+.title-1{
+    color: #155c4e;
+    font-weight: bold;
+    font-size: 20px;
+}
+.descrip-1{
+    color: #808185;
+    margin-top: 4px;
+    text-align: justify;
+}
+.dk{
+    margin-top: 45px;
+}
+.title-dk{
+    font-weight: bold;
+    color: #155c4e;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+}
+.comment{
+    margin-top: 40px;
+}
+.title-cmt{
+    color: #155c4e;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 9px;
+}
+.page-same{
+    padding-top: 21px;
+}
+.same-left h4, .title-cg{
+    color: #004232;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 23px;
+}
+.same-left .list-same {
+    display: flex;
+    flex-wrap: wrap;
+}
+.list-same li{
+   flex-basis: 47%;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+.thumb-same{
+    display: inline-block;
+    vertical-align: top;
+}
+.info-same{
+    display: inline-block;
+    width: 71%;
+}
+.info-same{
+    display: inline-block;
+    width: 67%;
+    margin-left: 5px;
+}
+.info-same h5{
+    margin: 0;
+    color: #004232;
+    font-size: 16px;
+    font-weight: bold;
+}
+.date{
+    font-size: 12px;
+    color: #838487;
+    margin-bottom: 0;
+}
+.cont-same, .descrip-cn{
+    color: #5e5f64;
+    text-align: justify;
+}
+.name-cg{
+    color:#004232 ;
+    font-weight: bold;
+    margin-top: 21px;
+}
+.thumb-bot{
+    width: 29%;
+    float: right;
+    margin-bottom: 28px;
+}
+
+/*========= index ==========*/
+.content {
+    margin-top: 37px;
+}
+.content p a {
+    color: #717277;
+}
+.content .col-md-6 {
+    padding: 0;
+    padding-right: 30px;
+}
+.content h3 {
+    text-transform: uppercase;
+    color: #004232;
+    margin-bottom: 15px;
+}
+.content h4 {
+    margin-top: 28px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #004232;
+}
+.content ul li h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #004232;
+}
+.content p.date {
+    color: #dfdfe0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.conntent p.title {
+    color: #7a7b7e;
+}
+.content ul li p.title {
+    color: #7a7b7e;
+    font-size: 10pt;
+}
+.content ul li p.date {
+    color: #dfdfe0;
+    font-size: 10px;
+    margin: 0;
+}
+.content ul li img {
+    width: 121px;
+}
+.content ul li {
+    margin-bottom: 22px;
+}
+.content .col-md-4 img {
+    padding-left: 16px;
+}
+.content .col-md-8 {
+    padding : 0;
+    padding-left: 10px;
+}
+.content .col-md-6 {
+    padding: 0px;
+}
+.video-1 {
+    margin-bottom: 23px;
+}
+p.title {
+    padding-right: 60px;
+}
+.tren2 {
+    padding-top: 61px;
+}
+.duoi2 {
+    padding-top: 51px;
+}
+.col-md-4.sidebar {
+    margin-top: 61px;
+}
+.cg {
+    margin-top: 15px;
+    width: 100%;
+    height: 227px;
+    border: 1px solid black;
+}
+.kn {
+    margin-top: 15px;
+    width: 100%;
+    height: 227px;
+    border: 1px solid black;
+    margin-bottom: 90px;
+}
+/* BÀI VIẾT CHI TIẾT */
+.content2 p.duongdan {
+    margin-top: 20px;
+}
+.content2 h4 {
+    color: #477f72 ;
+}
+.content2 p.date {
+    color: #dfdfe0;
+    font-size: 14px;
+}
+.content2 p.strong {
+    font-weight: bolder;
+}
+.content2 .anh-bai-viet {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.content2 .xemthem {
+    margin-top: 22px;
+}
+.content2 .xemthem h4 {
+    font-weight: bold;
+}
+.content2 .xemthem ul li  {
+    color: #477f72 ;
+    margin-bottom: 12px;
+}
+.content2 .xemthem {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #cc4c2b;
+}
+.content2 .noi-bat h4{
+    margin: 0;
+    margin-top: 20px;
+}
+.content2 .noi-bat li{
+    margin-top: 20px;
+}
+.content2 .noi-bat li h4{
+    margin-top: 0px;
+}
+.content2 .noi-bat .col-md-7{
+    padding: 0;
+}
+.noi-bat {
+    border-bottom: 2px solid #cc4c2b;
+}
+.ask h4 {
+    font-weight: bolder;
+}
+.ask {
+
+}
+.ask input {
+    width: 100%;
+    border-radius: 2px;
+    height: 45px;
+}
+.ask p {
+    margin-top: 10px;
+    color: #477f72 ;
+
+}
+.ask .btn-primary{
+    width: 196px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    border: none;
+    border-radius: 2px ;
+    margin: 20px 0px;
+    background-color: #cb4a2a;
+}
+.kn {
+    clear: both;
+    border: none;
+    font-size: 25px;
+    color: #477f72 ;
+    font-weight: bolder;
+}
+/* ============== INDEX ================ */
+.content1 .anhbia img {
+    width: 100%;
+}
+.content1 .anhbia {
+    margin-bottom: 40px;
+}
+.gt .col-md-7 {
+    margin-top: 73px;
+}
+.gt .col-md-7 h3.title, .chuyen-gia h3.title, .khach-hang h3.title{
+    font-size: 21px;
+    color: #477f72 ;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.gt {border-bottom: 2px solid #cc4c2b;}
+.img-chuyen-gia{
+    border-radius: 100%;
+    overflow: hidden;
+}
+.chuyen-gia .col-md-4 {
+    text-align: center;
+}
+.chuyen-gia .col-md-4 p.name {
+    color: #477f72;
+    padding-top: 14px;
+}
+.khach-hang p {
+    margin-top: 27px;
+}
+.khach-hang {
+    padding-bottom: 11px;
+}
+.gioithieu{
+    border-bottom: 2px solid #cc4c2b;
+}
+.dang-ky {
+    padding-top: 26px;
+}
+.dang-ky p {
+    padding-top: 23px;
+    color: #477f72;
+    padding-bottom: 10px;
+}
+.dang-ky .btn-primary {
+    border-radius: 4px;
+    height: 45px;
+    width: 186px;
+    background-color: #cb4a2a;
+    border: none;
+    margin-top: 26px;
+    margin-bottom: 26px;
+    color: #ffffff;
+}
+.dang-ky h4 {
+    font-weight: bolder;
+    color: #477f72;
+    text-transform: uppercase;
+    padding-top: 9px;
+}
+.dang-ky input {
+    height: 49px;
+    width: 100%;
+}
+.dang-ky .col-md-4 p {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.dang-ky .col-md-4 p.date {
+    color: #838383;
+    font-size: 14px;
+}
+.dang-ky .col-md-4 p.title {
+    font-weight: bold;
+    color: #477f72;
+}
+.dang-ky .col-md-4 ul li {
+    margin-bottom: 10px;
+}
+
+/*====== page-contact =======*/
+.page-contact{
+    overflow: hidden;
+    border-bottom: 2px solid #cc4c2b;
+    padding-bottom: 40px;
+}
+.page-contact .col-md-8, .page-contact-bot .col-md-8 .col-md-6, .page-contact-bot .col-md-8 .col-md-6 .col-md-5, .page-contact-bot .col-md-8 .col-md-6 .col-md-7{
+    padding-left: 0;
+}
+.page-contact .col-md-8 h4{
+    color: #477f72;
+    font-weight: bold;
+    font-size: 20px;
+}
+.page-contact .text-contact{
+    color: #808185;
+    margin-bottom: 50px;
+}
+.form-tuvan .formSendContact{
+    overflow: hidden;
+}
+.form-tuvan .col-md-6, .form-tuvan .col-md-12{
+    padding-left: 0;
+}
+.form-tuvan  input{
+    border: 1px solid #888888;
+    height: 50px;
+    margin-bottom: 26px;
+}
+.form-tuvan .btn-primary{
+    margin-top: 20px;
+    text-align: center;
+    background-color: #cb4a2a;
+    border: none;
+    padding: 12px 34px;
+    font-size: 17px;
+}
+.form-tuvan h4, .page-contact-bot .col-md-8 h4, .chuyen-gia h4 {
+    color: #477f72;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.form-cmt{
+    margin-top: 38px;
+}
+.video-sp{
+    margin-bottom: 30px;
+}
+.right-page-contact h4{
+    color: #477f72;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.page-contact-bot{
+    margin: 20px 0;
+}
+.info-contact-bot {
+    overflow: auto;
+    margin-top: 20px;
+}
+.info-contact-bot .col-md-6{
+    min-height: 180px;
+}
+.info-contact-bot .col-md-5 img{
+    width: 100%;
+}
+/*======== page-buy ========*/
+
+.gh{
+    margin-top: 20px;
+}
+.gh h4{
+    color: #004232;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.gh p{
+    color: #66676c;
+    margin-bottom: 0;
+}
+.local{
+    margin-top: 42px;
+}
+.local .col-lg-5, .local .col-lg-4, .local .col-lg-3{
+    padding: 0;
+}
+.icon-number-1{
+    background: url("http://localhost/project.vn/khangmaunhi/public/assets/frontend/img/icon-1-bold.png") no-repeat;
+    display: inline-block;
+    width: 40px;
+    height: 39px;
+    vertical-align: top;
+}
+.title-local{
+    text-align: center;
+}
+.title-local span, .title-time span{
+    font-weight: bold;
+    color: #5f5c75;
+    font-size: 18px;
+}
+.city, .time{
+    margin-top: 75px;
+}
+.big-city{
+    border: 3px solid #c22d08;
+    border-radius: 18px;
+    text-align: center;
+    margin: 38px 28px 38px 95px;
+}
+.more{
+    border: 3px solid #c22d08;
+    border-radius: 18px;
+    line-height: 46px;
+    margin: 0 24px 0 94px;
+    text-align: center;
+}
+.icon-number-2{
+    background: url("http://localhost/project.vn/khangmaunhi/public/assets/frontend/img/icon-2-bold.png") no-repeat;
+    display: inline-block;
+    width: 40px;
+    height: 39px;
+    vertical-align: top;
+}
+.day-2{
+    border: 3px solid #c22d08;
+    border-radius: 18px;
+    text-align: center;
+    margin: 38px 7px 38px 165px;
+    line-height: 46px;
+}
+.day-2-4{
+    border: 3px solid #c22d08;
+    border-radius: 18px;
+    text-align: center;
+    margin: 0 5px 0 164px;
+    line-height: 46px;
+}
+.descrip-gh{
+    color: #5f5c75;
+    margin: 82px 0 69px;
+}
+.f-c{
+    margin-left: 105px;
+    width: 22%;
+}
+.count{
+    color: #477f72;
+    font-weight: bold;
+}
+.form-buy input{
+    height: 50px;
+    text-align: center;
+    margin: 18px 0;
+}
+.form-buy .btn-danger{
+    width: 100%;
+    border: none    ;
+}
+/*========= gh =========*/
+
+.payment{
+    margin-top: 27px;
+    margin-bottom: 148px;
+}
+.title-pm{
+    color: #004232;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+.thumb-pm{
+    display: inline-block;
+}
+.text-pm{
+    display: inline-block;
+    width: 57%;
+    vertical-align: bottom;
+    margin-left: 43px;
+}
+.icon-nb-m-1{
+    background: url("http://localhost/project.vn/khangmaunhi/public/assets/frontend/img/icon-1-mo.png") no-repeat;
+    display: inline-block;
+    width: 40px;
+    height: 39px;
+    vertical-align: top;
+}
+.icon-nb-m-2{
+    background: url("http://localhost/project.vn/khangmaunhi/public/assets/frontend/img/icon-2-mo.png") no-repeat;
+    display: inline-block;
+    width: 40px;
+    height: 39px;
+    vertical-align: top;
+}
+.text-pm-1 p, .text-pm-2 p{
+    display: inline-block;
+    width: 87%;
+    margin-left: 30px;
+}
+.text-pm-1{
+    margin-bottom: 49px;
+}
+
+/*======= page-product ==========*/
+.page-product{
+    position: relative;
+}
+.thumb-thuoc{
+    width: 64%;
+    position: relative;
+    left: 15%;
+    margin-bottom: 70px;
+}
+.thumb-left, .thumb-right{
+    position: absolute;
+    z-index: 999;
+}
+.thumb-left{
+    left: 0;
+    width: 24%;
+}
+.thumb-right{
+    right: 0;
+    width: 29%;
+}
+.info-thuoc .tp{
+    width: 100%;
+}
+.info-thuoc .tp table{
+    width: 64%;
+    border: none;
+}
+.info-thuoc .tp table tr{
+    line-height: 36px;
+}
+.info-thuoc .tp table td{
+    border: none;
+}
+.info-product{
+    border-bottom: 2px solid #cc4c2b;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 9999;
+}
+.info-product h4{
+    color: #065344;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.info-thuoc .tp p{
+    display: inline-block;
+}
+.info-product p{
+    color: #88898c;
+    padding-bottom: 31px;
+}
+.info-thuoc{
+    border-bottom: 1px solid #cc4c2b;
+}
+.info-thuoc h4, .sd h4{
+    color: #075344;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.info-thuoc p, .sd p{
+    color: #757679;
+    font-size: 16px;
+}
+.tp{
+    display: inline-block;
+    width: 50%;
+}
+.sd{
+    padding-bottom: 51px;
+}
+.thumb-product{
+    border-bottom: 1px solid #cc4c2b;
+    position: relative;
+}
+.tron-mid{
+    background: #f1e9d2;
+    position: absolute;
+    top: -10%;
+    width: 64%;
+    height: 1115px;
+    left: 18%;
+    opacity: 0.4;
+    border-radius: 100%;
+}
+.bottom-page .col-md-8{
+    padding: 0 15px;
+}
+.bottom-page .col-md-6{
+    padding: 0 15px;
+}
+
+/*======== page-search ===========*/
+.content-search .col-lg-8 .col-lg-6{
+    padding-left: 0;
+}
+.content-search .col-lg-8 h3{
+    font-size: 20px;
+}
+.content-search .col-lg-8 h4{
+    font-size: 16px;
+    font-weight: bold;
+    color: #075344;
+}
+
+/*======= page-statics =========*/
+.info-statics {
+    min-height: 600px;
+    margin-bottom: 30px;
+}
+.list-news .col-md-5{
+    padding: 0;
+}
+.list-news img{
+    width: 100%;
+}
+.list-news .col-md-7 h5, .info-contact-bot .title{
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0;
+    color: #075344;
+}
+.list-news .col-md-7 .text{
+    margin-bottom: 19px;
+    font-size: 15px;
+}
