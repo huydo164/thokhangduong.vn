@@ -36,15 +36,6 @@ Route::group(['middleware' => ['web', 'checkPermission'], 'prefix' => 'admin', '
     Route::post('statics/edit/{id?}', array('as' => 'admin.statics_edit', 'uses' => 'StaticsController@postItem', 'permission_name' => 'Sửa tin tức'))->where('id', '[0-9]+');
     Route::post('statics/delete', array('as' => 'admin.statics_delete', 'uses' => 'StaticsController@delete', 'permission_name' => 'Xóa tin tức'));
 
-    Route::get('contact', array('as' => 'admin.contact', 'uses' => 'ContactController@listView', 'permission_name' => 'Danh sách đăng ký', 'display_menu' => 1, 'display_icon_sub' => 'fa fa-globe'));
-    Route::get('contact/edit/{id?}', array('as' => 'admin.contact_edit', 'uses' => 'ContactController@getItem', 'permission_name' => 'Chi tiết đăng ký'))->where('id', '[0-9]+');
-    Route::post('contact/edit/{id?}', array('as' => 'admin.contact_edit', 'uses' => 'ContactController@postItem', 'permission_name' => 'Sửa đăng ký'))->where('id', '[0-9]+');
-    Route::post('contact/delete', array('as' => 'admin.contact_delete', 'uses' => 'ContactController@delete', 'permission_name' => 'Xóa đăng ký'));
-
-    Route::get('buy', array('as' => 'admin.buy', 'uses' => 'BuyController@listView', 'permission_name' => 'Danh sách mua sản phẩm', 'display_menu' => 1, 'display_icon_sub' => 'fa fa-globe'));
-    Route::get('buy/edit/{id?}', array('as' => 'admin.buy_edit', 'uses' => 'BuyController@getItem', 'permission_name' => 'Chi tiết mua sản phẩm'))->where('id', '[0-9]+');
-    Route::post('buy/edit/{id?}', array('as' => 'admin.buy_edit', 'uses' => 'BuyController@postItem', 'permission_name' => 'Sửa mua sản phẩm'))->where('id', '[0-9]+');
-    Route::post('buy/delete', array('as' => 'admin.buy_delete', 'uses' => 'BuyController@delete', 'permission_name' => 'Xóa mua sản phẩm'));
 
 });
 
