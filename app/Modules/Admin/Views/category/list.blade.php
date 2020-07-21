@@ -50,13 +50,6 @@ use App\Library\PHPDev\CGlobal;
                                         </div>
                                     </div>
                                     <div class="form-group col-lg-2">
-                                        <label class="control-label">Menu chân trang</label>
-                                        <div><select class="form-control input-sm" name="category_menu_footer">
-                                                {!! $optionFooter !!}
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-lg-2">
                                         <label class="control-label">Nổi bật</label>
                                         <div><select class="form-control input-sm" name="category_hot">
                                                 {!! $optionHot !!}
@@ -107,7 +100,6 @@ use App\Library\PHPDev\CGlobal;
                                         <th width="10%">Tiêu đề</th>
                                         <th width="8%">Kiểu danh mục</th>
                                         <th width="6%">Menu ngang</th>
-                                        <th width="6%">Chân trang</th>
                                         <th width="6%">Nổi bật</th>
                                         <th width="5%">Thứ tự</th>
                                         <th width="5%">Trạng thái</th>
@@ -119,7 +111,7 @@ use App\Library\PHPDev\CGlobal;
                                     @foreach($data as $k=>$item)
                                         @if(!empty($item['parent']))
                                             <tr>
-                                                <td><b>{{$k+1}}</b></td>
+                                                <td><b>{{$k+1   }}</b></td>
                                                 <td>
                                                     <label class="pos-rel">
                                                         <input class="ace checkItem" name="checkItem[]" value="{{$item['parent']['category_id']}}" type="checkbox">
@@ -133,13 +125,6 @@ use App\Library\PHPDev\CGlobal;
                                                 </td>
                                                 <td class="text-center">
                                                     @if($item['parent']['category_menu'] == '1')
-                                                        <i class="fa fa-check fa-admin green"></i>
-                                                    @else
-                                                        <i class="fa fa-remove fa-admin red"></i>
-                                                    @endif
-                                                </td>
-                                                <td class="text-center">
-                                                    @if($item['parent']['category_menu_footer'] == '1')
                                                         <i class="fa fa-check fa-admin green"></i>
                                                     @else
                                                         <i class="fa fa-remove fa-admin red"></i>
@@ -185,13 +170,6 @@ use App\Library\PHPDev\CGlobal;
                                                     </td>
                                                     <td class="text-center">
                                                         @if($sub['category_menu'] == '1')
-                                                            <i class="fa fa-check fa-admin green"></i>
-                                                        @else
-                                                            <i class="fa fa-remove fa-admin red"></i>
-                                                        @endif
-                                                    </td>
-                                                    <td class="text-center">
-                                                        @if($sub['category_menu_footer'] == '1')
                                                             <i class="fa fa-check fa-admin green"></i>
                                                         @else
                                                             <i class="fa fa-remove fa-admin red"></i>

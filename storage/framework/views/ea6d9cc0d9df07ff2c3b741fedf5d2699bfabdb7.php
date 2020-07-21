@@ -52,14 +52,6 @@ use App\Library\PHPDev\CGlobal;
                                         </div>
                                     </div>
                                     <div class="form-group col-lg-2">
-                                        <label class="control-label">Menu chân trang</label>
-                                        <div><select class="form-control input-sm" name="category_menu_footer">
-                                                <?php echo $optionFooter; ?>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-lg-2">
                                         <label class="control-label">Nổi bật</label>
                                         <div><select class="form-control input-sm" name="category_hot">
                                                 <?php echo $optionHot; ?>
@@ -113,7 +105,6 @@ use App\Library\PHPDev\CGlobal;
                                         <th width="10%">Tiêu đề</th>
                                         <th width="8%">Kiểu danh mục</th>
                                         <th width="6%">Menu ngang</th>
-                                        <th width="6%">Chân trang</th>
                                         <th width="6%">Nổi bật</th>
                                         <th width="5%">Thứ tự</th>
                                         <th width="5%">Trạng thái</th>
@@ -139,13 +130,6 @@ use App\Library\PHPDev\CGlobal;
                                                 </td>
                                                 <td class="text-center">
                                                     <?php if($item['parent']['category_menu'] == '1'): ?>
-                                                        <i class="fa fa-check fa-admin green"></i>
-                                                    <?php else: ?>
-                                                        <i class="fa fa-remove fa-admin red"></i>
-                                                    <?php endif; ?>
-                                                </td>
-                                                <td class="text-center">
-                                                    <?php if($item['parent']['category_menu_footer'] == '1'): ?>
                                                         <i class="fa fa-check fa-admin green"></i>
                                                     <?php else: ?>
                                                         <i class="fa fa-remove fa-admin red"></i>
@@ -191,13 +175,6 @@ use App\Library\PHPDev\CGlobal;
                                                     </td>
                                                     <td class="text-center">
                                                         <?php if($sub['category_menu'] == '1'): ?>
-                                                            <i class="fa fa-check fa-admin green"></i>
-                                                        <?php else: ?>
-                                                            <i class="fa fa-remove fa-admin red"></i>
-                                                        <?php endif; ?>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <?php if($sub['category_menu_footer'] == '1'): ?>
                                                             <i class="fa fa-check fa-admin green"></i>
                                                         <?php else: ?>
                                                             <i class="fa fa-remove fa-admin red"></i>

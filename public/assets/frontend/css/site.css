@@ -43,3 +43,127 @@ body {
     width: 100%;
     overflow: hidden;
 }
+
+/*======== page-statics =========*/
+.breadcrumb{
+    background: none;
+    padding: 0;
+}
+.title-statics, .title-sick{
+    color: #671114;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.post-img{
+    margin-bottom: 20px;
+}
+.post-title{
+    color: #671114;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.date, .post-intro{
+    color: #808183;
+}
+.date{
+    font-size: 13px;
+}
+.post-intro{
+    font-size: 16px;
+    text-align: justify;
+}
+.list-sub-page{
+    overflow: auto;
+    margin-bottom: 20px;
+}
+.list-sub-page .col-lg-3{
+    padding: 0;
+}
+.list-sub-page .list-title{
+    margin: 0;
+    color: #671114;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+.list-intro{
+    color: #808183;
+    text-align: justify;
+}
+.mgt20{
+    margin-top: 20px;
+}
+.mgb20{
+    margin-bottom: 20px;
+}
+.item-last{
+    margin-bottom: 20px;
+}
+.clip-page{
+    margin-bottom: 10px;
+}
+.statics-same{
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 22px;
+    color: #671114;
+}
+.more-news h3{
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #671114;
+}
+.more-news a{
+    text-decoration: none;
+    color: #671114;
+    font-weight: bold;
+    display: block;
+    font-size: 16px;
+}
+
+/*======== page-statics-detail ============*/
+.title-detail{
+    color: #671114;
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 21px;
+}
+.cont-detail{
+    margin-top: 31px;
+    text-align: justify;
+    border-bottom: 2px solid #671114;
+}
+.more-post{
+    margin-top: 20px;
+}
+.more-post .col-sm-6{
+    padding-left: 0;
+}
+.more-post .col-lg-3{
+    padding-right: 0;
+}
+.more-post h4{
+    font-style: italic;
+    font-weight: bold;
+}
+.same-post{
+    overflow: auto;
+    margin-bottom: 20px;
+}
+.same-post h4{
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #671114;
+}
+
+/*========== page-sick ===========*/
+
+hr{
+    border-top: 2px solid #d21f25;
+    margin-bottom: 27px;
+    margin-top: 26px;
+}

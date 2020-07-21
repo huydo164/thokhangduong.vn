@@ -1,0 +1,41 @@
+@media (max-width: 1200px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
+    .first-post{
+        margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .first-post{
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .first-post{
+        margin-bottom: 25px;
+    }
+    .list-sub-page .col-sm-9{
+        padding-left:0 ;
+    }
+    .list-sub-page .list-title{
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .list-sub-page .col-sm-9{
+        padding-left:0 ;
+    }
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 320px) {
+
+}

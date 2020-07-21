@@ -1,12 +1,12 @@
 <?php
 namespace App\Modules\Statics\Controllers;
 
+use App\Library\PHPDev\FuncLib;
 use App\Library\PHPDev\Loader;
 use App\Library\PHPDev\CGlobal;
 use App\Library\PHPDev\Pagging;
 use App\Library\PHPDev\Utility;
 use App\Modules\Models\Category;
-use App\Modules\Models\Contact;
 use App\Modules\Models\Info;
 use App\Modules\Models\Statics;
 use Illuminate\Support\Facades\Redirect;
@@ -24,6 +24,166 @@ class StaticsController extends BaseStaticsController{
 
         return view('Statics::content.index', [
 
+        ]);
+    }
+
+    public function actionRouter($catname, $catid){
+        if ($catid > 0 && $catname != ''){
+            $arrCat = Category::getById($catid);
+            if ($arrCat != null){
+                $type_keyword = $arrCat->category_type_keyword;
+                if ($type_keyword == 'group_statics'){
+                    return self::pageStatic($catname, $catid);
+                }
+                elseif($type_keyword == 'group_sick'){
+                    return self::pageSick($catname, $catid);
+                }
+            }
+        }
+    }
+
+    public function pageStatic($catname, $catid){
+        $pageNo = (int)Request::get('page', 1);
+        $pageScroll = CGlobal::num_scroll_page;
+        $limit = 12;
+        $offset = ($pageNo -1)*$limit;
+        $total = 0;
+        $data = $search = $dataCate =  array();
+        $paging = '';
+
+        if ($catid > 0){
+            $search['statics_cat_name'] = $catname;
+            $search['statics_catid'] = $catid;
+            $search['statics_status'] = CGlobal::status_show;
+            $search['field_get'] = 'statics_id,statics_catid,statics_cat_name,statics_cat_alias,statics_title,statics_intro,statics_content,statics_image,statics_created';
+            $data  = Statics::searchByCondition($search, $limit, $offset, $total);
+            $paging = $total > 0 ? Pagging::getPager($pageScroll, $pageNo, $total, $limit, $search) : '';
+            $dataCate = Category::getById($catid);
+        }
+
+        $text_tt_1 = self::viewShareVal('TEXT_TinTuc_1');
+        $text_bv_1 = self::viewShareVal('TEXT_BAIVIET');
+        $text_ba = self::viewShareVal('TEXT_BENHAN');
+
+        $cat_1 = (int)strip_tags(self::viewShareVal('CAT_ID_BAIVIET'));
+        $data_cat_1 = [];
+        if ($data_cat_1 > 0){
+            $data_search_1['statics_catid'] = $cat_1;
+            $data_search_1['statics_order_no'] = 'asc';
+            $data_cat_1 = Statics::getFocus($data_search_1, $limit = 10);
+        }
+
+        $cat_2 = (int)strip_tags(self::viewShareVal('CAT_ID_VIDEO'));
+        $data_cat_2 = [];
+        if ($data_cat_2 > 0){
+            $data_search_2['statics_catid'] = $cat_2;
+            $data_search_2['statics_order_no'] = 'asc';
+            $data_cat_2 = Statics::getFocus($data_search_2, $limit = 2);
+        }
+
+        return view('Statics::content.pageStatics', [
+            'data' => $data,
+            'dataCate' => $dataCate,
+            'paging' => $paging,
+            'text_tt_1' => $text_tt_1,
+            'text_bv_1' => $text_bv_1,
+            'data_cat_1' => $data_cat_1,
+            'data_cat_2' => $data_cat_2,
+            'text_ba' => $text_ba,
+        ]);
+    }
+
+    public function pageSick($catname, $catid){
+        $pageNo = (int)Request::get('page', 1);
+        $pageScroll = CGlobal::num_scroll_page;
+        $limit = 12;
+        $offset = ($pageNo -1)*$limit;
+        $total = 0;
+        $data = $search = $dataCate =  array();
+        $paging = '';
+
+        if ($catid > 0){
+            $search['statics_cat_name'] = $catname;
+            $search['statics_catid'] = $catid;
+            $search['statics_status'] = CGlobal::status_show;
+            $search['field_get'] = 'statics_id,statics_catid,statics_cat_name,statics_cat_alias,statics_title,statics_intro,statics_content,statics_image,statics_created';
+            $data  = Statics::searchByCondition($search, $limit, $offset, $total);
+            $paging = $total > 0 ? Pagging::getPager($pageScroll, $pageNo, $total, $limit, $search) : '';
+            $dataCate = Category::getById($catid);
+        }
+
+        $text_ba = self::viewShareVal('TEXT_BENHAN');
+        $text_bv_1 = self::viewShareVal('TEXT_BAIVIET');
+
+        $cat_1 = (int)strip_tags(self::viewShareVal('CAT_ID_BAIVIET'));
+        $data_cat_1 = [];
+        if ($data_cat_1 > 0){
+            $data_search_1['statics_catid'] = $cat_1;
+            $data_search_1['statics_order_no'] = 'asc';
+            $data_cat_1 = Statics::getFocus($data_search_1, $limit = 10);
+        }
+
+        $cat_2 = (int)strip_tags(self::viewShareVal('CAT_ID_VIDEO'));
+        $data_cat_2 = [];
+        if ($data_cat_2 > 0){
+            $data_search_2['statics_catid'] = $cat_2;
+            $data_search_2['statics_order_no'] = 'asc';
+            $data_cat_2 = Statics::getFocus($data_search_2, $limit = 2);
+        }
+
+        return view('Statics::content.pageSick',[
+            'data' => $data,
+            'dataCate' => $dataCate,
+            'paging' => $paging,
+            'text_ba' => $text_ba,
+            'text_bv_1' => $text_bv_1,
+            'data_cat_1' => $data_cat_1,
+            'data_cat_2' => $data_cat_2,
+        ]);
+    }
+
+    public function pageStaticDetail($name = '', $id = 0){
+        $data = $dataCate = $dataSame =  array();
+        if ($id > 0){
+            $data = Statics::getById($id);
+            if (isset($data->statics_id)){
+                $dataUpdate['statics_view_num'] = (int)$data->statics_view_num + 1;
+                Statics::updateData($id, $dataUpdate);
+            }
+            $dataCate = Category::getById($data->statics_catid);
+        }
+
+        $searchSame['field_get'] = 'statics_id,statics_catid,statics_cat_name,statics_cat_alias,statics_title,statics_intro,statics_content,statics_image,statics_created';
+        $dataSame = Statics::getSameData($id, $data->statics_catid, $limit = 6, $searchSame);
+
+        $text_bvk = self::viewShareVal('TEXT_BAIVIETKHAC');
+        $text_bv_1 = self::viewShareVal('TEXT_BAIVIET');
+
+        $cat_1 = (int)strip_tags(self::viewShareVal('CAT_ID_BAIVIET'));
+        $data_cat_1 = [];
+        if ($data_cat_1 > 0){
+            $data_search_1['statics_catid'] = $cat_1;
+            $data_search_1['statics_order_no'] = 'asc';
+            $data_cat_1 = Statics::getFocus($data_search_1, $limit = 10);
+        }
+
+        $cat_2 = (int)strip_tags(self::viewShareVal('CAT_ID_VIDEO'));
+        $data_cat_2 = [];
+        if ($data_cat_2 > 0){
+            $data_search_2['statics_catid'] = $cat_2;
+            $data_search_2['statics_order_no'] = 'asc';
+            $data_cat_2 = Statics::getFocus($data_search_2, $limit = 2);
+        }
+
+        return view('Statics::content.pageStaticsDetail', [
+            'id' => $id,
+            'data' => $data,
+            'dataCate' => $dataCate,
+            'dataSame' => $dataSame,
+            'text_bvk' => $text_bvk,
+            'text_bv_1' => $text_bv_1,
+            'data_cat_1' => $data_cat_1,
+            'data_cat_2' => $data_cat_2
         ]);
     }
 
