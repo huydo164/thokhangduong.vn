@@ -205,10 +205,27 @@ class StaticsController extends BaseStaticsController{
         $dataSearch = Statics::searchByCondition($search, $limit, $offset, $total);
         $paging = $total > 0 ? Pagging::getPager($pageScroll, $pageNo, $total, $limit, $search) : '';
 
+        $cat_1 = (int)strip_tags(self::viewShareVal('CAT_ID_BAIVIET'));
+        $data_cat_1 = [];
+        if ($data_cat_1 > 0){
+            $data_search_1['statics_catid'] = $cat_1;
+            $data_search_1['statics_order_no'] = 'asc';
+            $data_cat_1 = Statics::getFocus($data_search_1, $limit = 10);
+        }
+        $cat_2 = (int)strip_tags(self::viewShareVal('CAT_ID_VIDEO'));
+        $data_cat_2 = [];
+        if ($data_cat_2 > 0){
+            $data_search_2['statics_catid'] = $cat_2;
+            $data_search_2['statics_order_no'] = 'asc';
+            $data_cat_2 = Statics::getFocus($data_search_2, $limit = 2);
+        }
+
         return view('Statics::content.pageSearch',[
             'data' => $dataSearch,
             'search' => $search,
-            'paging' => $paging
+            'paging' => $paging,
+            'data_cat_1' => $data_cat_1,
+            'data_cat_2' => $data_cat_2
         ]);
     }
 
