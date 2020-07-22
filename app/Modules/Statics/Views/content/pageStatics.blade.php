@@ -13,7 +13,7 @@ use App\Library\PHPDev\ThumbImg;
     @include('Statics::block.footer')
 @stop
 @section('content')
-    <div id="content">
+    <div class="content">
         <div class="container">
             <div class="page-neo">
                 <ul class="breadcrumb">

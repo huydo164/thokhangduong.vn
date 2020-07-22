@@ -1,3 +1,49 @@
+@font-face {
+    font-family: samsung-one-400;
+    src: url(../fonts/samsung-one-400.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/samsung-one-400.otf) format('opentype'),
+    url(../fonts/samsung-one-400.woff) format('woff'),
+    url(../fonts/samsung-one-400.ttf) format('truetype'),
+    url(../fonts/samsung-one-400.svg#samsung-one-400.eot) format('svg');
+    font-weight: 400;font-style: normal
+}
+@font-face{
+    font-family:samsung-one-700;
+    src:url(../fonts/samsung-one-700.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/samsung-one-700.otf) format("opentype"),
+    url(../fonts/samsung-one-700.woff) format("woff"),
+    url(../fonts/samsung-one-700.ttf) format("truetype"),
+    url(../fonts/samsung-one-700.svg#samsung-one-700) format("svg");
+    font-weight:400; font-style:normal
+}
+@font-face{
+    font-family:Roboto-Regular;
+    src:url(../fonts/Roboto-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/Roboto-Regular.otf) format("opentype"),
+    url(../fonts/Roboto-Regular.woff) format("woff"),
+    url(../fonts/Roboto-Regular.ttf) format("truetype"),
+    url(../fonts/Roboto-Regular.svg#samsung-one-700) format("svg");
+    font-weight:400; font-style:normal
+}
+@font-face{
+    font-family: Montserat-Regular;
+    src:url(../fonts/Montserrat-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/Montserrat-Regular.otf) format("opentype"),
+    url(../fonts/Montserrat-Regular.woff) format("woff"),
+    url(../fonts/Montserrat-Regular.ttf) format("truetype"),
+    url(../fonts/Montserrat-Regular.svg#samsung-one-700) format("svg");
+    font-weight:400; font-style:normal
+}
+body {
+    font-family: Montserat-Regular;
+    font-size: 15px;
+    background:#fff;
+    color: #222;
+    line-height: 1.42857143;
+    width: 100%;
+    overflow: hidden;
+}
+
 /* ------header------ */
 div#header .info {
     background: #2c2c2c;
@@ -10,16 +56,26 @@ div#header .info .col-md-3 {
 #header .web a {
     /* margin: 10px 0px; */
     /* padding: 17px 0px; */
-    color: #808185;
+    color: #96979b;
+    font-size: 16px;
 }
 
 div#header .web {
     margin: 15px 0px;
 }
+div#header .web a{
+    transition: all .3s ease;
+}
+div#header .web a:hover{
+    color: #ffffff;
+    display: inline-block;
+}
 
 div#header p.phone {
     text-align: right;
-    color: #b32524;
+    color: #d52120;
+    font-weight: bold;
+    font-size: 17px;
 }
 
 div#header .phone {
@@ -28,20 +84,29 @@ div#header .phone {
 div#header .search {
     position: relative;
     margin: 10px 0px;
+    text-align: right;
 }
-div#header .info i.ace-icon.fa.fa-search {
+.search input{
+    border: none;
+}
+.icon-search{
+    background: url('../img/icon-search.png') no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: none;
     position: absolute;
-    color: #6d2824;
-    transform: rotate(79deg);
-    left: 5%;
     top: 7px;
+    left: 21%;
+    background-size: 92%;
 }
 
 div#header .info input[type="text"] {
-    padding-left: 20px;
-    width: 200px;
+    padding-left: 38px;
+    width: 83%;
     height: 33px;
     border-radius: 16px;
+    float: right;
 }
 
 .mbButtonMenu{
