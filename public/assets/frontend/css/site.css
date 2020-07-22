@@ -1,46 +1,122 @@
-@font-face {
-    font-family: samsung-one-400;
-    src: url(../fonts/samsung-one-400.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/samsung-one-400.otf) format('opentype'),
-    url(../fonts/samsung-one-400.woff) format('woff'),
-    url(../fonts/samsung-one-400.ttf) format('truetype'),
-    url(../fonts/samsung-one-400.svg#samsung-one-400.eot) format('svg');
-    font-weight: 400;font-style: normal
+/* ------header------ */
+div#header .info {
+    background: #2c2c2c;
 }
-@font-face{
-    font-family:samsung-one-700;
-    src:url(../fonts/samsung-one-700.eot?#iefix) format("embedded-opentype"),
-    url(../fonts/samsung-one-700.otf) format("opentype"),
-    url(../fonts/samsung-one-700.woff) format("woff"),
-    url(../fonts/samsung-one-700.ttf) format("truetype"),
-    url(../fonts/samsung-one-700.svg#samsung-one-700) format("svg");
-    font-weight:400; font-style:normal
+div#header .info .col-md-3 {
+    background: #2c2c2c;
+    padding: 0;
 }
-@font-face{
-    font-family:Roboto-Regular;
-    src:url(../fonts/Roboto-Regular.eot?#iefix) format("embedded-opentype"),
-    url(../fonts/Roboto-Regular.otf) format("opentype"),
-    url(../fonts/Roboto-Regular.woff) format("woff"),
-    url(../fonts/Roboto-Regular.ttf) format("truetype"),
-    url(../fonts/Roboto-Regular.svg#samsung-one-700) format("svg");
-    font-weight:400; font-style:normal
+
+#header .web a {
+    /* margin: 10px 0px; */
+    /* padding: 17px 0px; */
+    color: #808185;
 }
-@font-face{
-    font-family: Montserat-Regular;
-    src:url(../fonts/Montserrat-Regular.eot?#iefix) format("embedded-opentype"),
-    url(../fonts/Montserrat-Regular.otf) format("opentype"),
-    url(../fonts/Montserrat-Regular.woff) format("woff"),
-    url(../fonts/Montserrat-Regular.ttf) format("truetype"),
-    url(../fonts/Montserrat-Regular.svg#samsung-one-700) format("svg");
-    font-weight:400; font-style:normal
+
+div#header .web {
+    margin: 15px 0px;
 }
-body {
-    font-family: Montserat-Regular;
-    font-size: 15px;
-    background:#fff;
-    color: #222;
-    line-height: 1.42857143;
+
+div#header p.phone {
+    text-align: right;
+    color: #b32524;
+}
+
+div#header .phone {
+    margin: 16px 0px;
+}
+div#header .search {
+    position: relative;
+    margin: 10px 0px;
+}
+div#header .info i.ace-icon.fa.fa-search {
+    position: absolute;
+    color: #6d2824;
+    transform: rotate(79deg);
+    left: 5%;
+    top: 7px;
+}
+
+div#header .info input[type="text"] {
+    padding-left: 20px;
+    width: 200px;
+    height: 33px;
+    border-radius: 16px;
+}
+
+
+
+.menuTop {
+    background: #fae6b4;
+    float: left;
     width: 100%;
+}
+
+.menuTop ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.menuTop>ul {
+    #margin: 0 90px;
+    margin: 0
+}
+.menuTop ul li {
+    padding-right: 82px;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 12px;
+    vertical-align: top;
+    line-height: 40px;
+    float: left;
+    margin: 0;
+    position: relative;
+}
+.menuTop ul li.first a{
+    padding-left: 0;
+}
+.menuTop ul li a {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #6b1216;
+    font-weight: bold;
+    padding: 0 22px;
+    display: block;
+}
+
+.menuTop ul li a:hover,
+.menuTop ul li.act a {
+    color: #ff9500
+}
+.menuTop li ul {
+    background: #002020;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    white-space: nowrap;
+    padding: 0;
+    line-height: 25px;
+    display: none;
+    min-width: 200px;
+    z-index: 999;
+}
+.menuTop li:hover ul {
+    display: block
+}
+.menuTop li ul li {
+    display: block;
+    float: none;
+    margin: 0px 12px;
+    line-height: normal
+}
+.menuTop li ul li a {
+    text-transform: none;
+    font-weight: normal;
+    border-bottom: 1px solid #fff;
+    padding: 10px 0px;
+    width: 100%;
+
     overflow: hidden;
 }
 
@@ -166,4 +242,95 @@ hr{
     border-top: 2px solid #d21f25;
     margin-bottom: 27px;
     margin-top: 26px;
+=======
+    display: inline-block;
+    font-size: 14px
+}
+.menuTop li ul li:last-child a {
+    border-bottom: none
+}
+
+/* ---------footer----------- */
+div#footer {padding: 20px 0px;background: #333333;}
+
+div#footer p {
+    color: #c0c0c0;
+}
+div#footer .logo img  {
+    width: 58%;
+}
+
+div#footer .col-md-2 .logo {
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+/* -----------index---------- */
+.content {
+    background-image: url("http://localhost:8888/thokhangduong.vn/public/uploads/bg.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+}
+.content .banner {
+    border-top: 6px solid #cd161b;
+    border-bottom: 6px solid #cd161b;
+}
+.content .container {
+    padding: 35px 0px;
+}
+
+.content p.title {
+    color: #540004;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.content p.strong {
+    font-weight: bold;
+    color: #424242;
+}
+
+.content p.artice {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #cf2123;
+}
+
+.pic img {
+    width: 90%;
+}
+
+.cate .col-md-6 {
+    padding-right: 0;
+}
+
+.col-md-6.small img {
+    width: 80%;
+}
+p.article {
+    width: 80%;
+}
+.cate p.title {
+    margin-top: 20px;
+}
+.col-md-6.small .col-md-8 {
+    padding: 0;
+}
+
+.small p.title {
+    margin-top: 0;
+}
+.small .col-md-4 {
+    margin-left: 0px;
+    padding-right: 0;
+    /* padding-left: 12px; */
+}
+h3 {
+    color: #742320;
+}
+
+.cate {
+    border-bottom: 6px solid #742320;
+
 }
