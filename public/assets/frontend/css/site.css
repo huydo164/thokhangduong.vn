@@ -44,7 +44,9 @@ div#header .info input[type="text"] {
     border-radius: 16px;
 }
 
-
+.mbButtonMenu{
+    display: none;
+}
 
 .menuTop {
     background: #fae6b4;
@@ -59,7 +61,7 @@ div#header .info input[type="text"] {
 }
 
 .menuTop>ul {
-    #margin: 0 90px;
+    margin: 0 90px;
     margin: 0
 }
 .menuTop ul li {
@@ -242,7 +244,6 @@ hr{
     border-top: 2px solid #d21f25;
     margin-bottom: 27px;
     margin-top: 26px;
-=======
     display: inline-block;
     font-size: 14px
 }
@@ -333,5 +334,4 @@ h3 {
 
 .cate {
     border-bottom: 6px solid #742320;
-
 }

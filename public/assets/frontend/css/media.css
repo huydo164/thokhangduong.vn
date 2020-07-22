@@ -40,11 +40,22 @@
 @media (max-width: 320px) {
 
 }
-
 @media (max-width: 768px) {
     #header .info {
         text-align: center;
     }
+
+    .mbButtonMenu {
+        top: -10px;
+        position: absolute;
+        right: -5px;
+        color: #fff
+    }
+
+    .mbButtonMenu {
+        display: inline-block;
+    }
+
     .menuTop {
         float: none;
         margin-top: 0;
@@ -52,7 +63,7 @@
         z-index: 200;
         left: 0;
         top: 0;
-        background: #6e000b;
+        background: #fae6b4;
         width: 75%;
         height: 100%;
         border-right: 2px solid #6e000b;
@@ -60,18 +71,22 @@
         padding-top: 10px;
         overflow: scroll;
     }
+
     .menuTop.on {
         display: block
     }
+
     .menuTop ul li {
         padding: 5px
     }
+
     .menuTop ul li {
         float: none;
         position: relative;
         width: 100%;
         padding-left: 5px
     }
+
     .menuTop li ul {
         top: auto;
         left: 0;
@@ -83,41 +98,54 @@
         position: relative;
         background: #6e000b
     }
+
     .menuTop li ul li {
         margin: 0px 0;
         padding-left: 0px
     }
+
     .menuTop li ul li a {
         border-bottom: 1px solid #ddd;
     }
-    .menuTop ul li a:hover {
-        color: #fff
+
+    .menuTop ul li a {
+        color: #671016;
     }
+
+    .menuTop ul li a:hover {
+        color: #fff;
+    }
+
     .menuTop ul li a {
         padding: 0
     }
+
     .item-trans {
         width: 32.5%;
         float: left;
         padding-right: 0
     }
+
     .mbButtonMenuL {
         top: 2px;
         position: absolute;
         right: -5px;
         color: #fff
     }
+
     .mbButtonMenuL.navbar-toggle {
         margin-top: 0px;
         padding: 0 10px;
         top: -15px;
         right: -17px;
     }
+
     .mbButtonMenuL:hover,
     .mbButtonMenu:hover {
         color: #fafafa
     }
-    .mbButtonMenuL{
+
+    .mbButtonMenuL {
         display: inline-block;
     }
 }

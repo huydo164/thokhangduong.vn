@@ -6,7 +6,6 @@ use App\Library\PHPDev\ThumbImg;
 
 ?>
 {!! isset($messages) && ($messages != '') ? $messages : '' !!}
-
 <div id="header">
     <div class="info">
         <div class="container">
@@ -23,14 +22,17 @@ use App\Library\PHPDev\ThumbImg;
                 </div>
                 <div class="col-md-3">
                     <div class="search">
-                        <form action="">
+                        <form action="{{URL::route('site.pageStaticsSearch')}}" method="GET">
                             <button type="submit" name="submit">
                                 <i class="ace-icon fa fa-search"></i>
                             </button>
-                            <input type="text" name="search">
+                            <input type="text" name="statics_title">
                         </form>
                     </div>
                 </div>
+                <button type="button" class="mbButtonMenu navbar-toggle pull-right">
+                    <i class="fa fa-bars fa-2x"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -77,4 +79,3 @@ use App\Library\PHPDev\ThumbImg;
 
     </div>
 </div>
-
