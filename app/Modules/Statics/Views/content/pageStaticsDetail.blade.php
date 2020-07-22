@@ -6,7 +6,7 @@ use App\Library\PHPDev\ThumbImg;
 ?>
 @extends('Statics::layout.html')
 @section('content')
-    <div id="content">
+    <div class="content">
         <div class="container">
             <div class="page-detail">
                 <div class="page-neo">
