@@ -232,4 +232,5 @@ use App\Library\PHPDev\ThumbImg;
         </div>
     </div>
 </div>
+    @stop
 
