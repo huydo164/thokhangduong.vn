@@ -3,9 +3,6 @@ use App\Library\PHPDev\ThumbImg;
 use App\Library\PHPDev\CGlobal;
 use App\Library\PHPDev\FuncLib;
 ?>
-<<<<<<< HEAD
-
-=======
 <div id="footer">
     <div class="container">
         <div class="rows">
@@ -23,4 +20,3 @@ use App\Library\PHPDev\FuncLib;
         </div>
     </div>
 </div>
->>>>>>> chien

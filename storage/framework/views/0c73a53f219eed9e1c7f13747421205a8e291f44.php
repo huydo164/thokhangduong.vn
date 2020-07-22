@@ -19,4 +19,5 @@ use App\Library\PHPDev\FuncLib;
             </div>
         </div>
     </div>
-</div><?php /**PATH D:\wampsever\www\thokhangduong.vn\app\Modules/Statics/Views/block/footer.blade.php ENDPATH**/ ?>
+</div>
+<?php /**PATH D:\wampsever\www\thokhangduong.vn\app\Modules/Statics/Views/block/footer.blade.php ENDPATH**/ ?>

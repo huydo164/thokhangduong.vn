@@ -15,6 +15,7 @@ Route::group(['middleware' => ['web'], 'prefix' => '/', 'namespace' => $namespac
     Route::get('chi-tiet/{name}-{id}.html', array('as' => 'site.detailStatics', 'uses' => 'StaticsController@pageStaticDetail'))->where('name', '[A-Z0-9a-z_\-]+')->where('id', '[0-9]+');
 
     Route::get('benh-an/{name}-{id}.html', array('as' => 'site.pageSick', 'uses' => 'StaticsController@pageSick'));
+    Route::get('tim-kiem', array('as' => 'site.pageStaticsSearch', 'uses' => 'StaticsController@pageSearch'));
 
 
 });

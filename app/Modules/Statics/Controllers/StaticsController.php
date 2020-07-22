@@ -191,5 +191,25 @@ class StaticsController extends BaseStaticsController{
             'data_cat_2' => $data_cat_2
         ]);
     }
+    public function pageSearch(){
+        $pageNo = (int)Request::get('page', 1);
+        $pageScroll  = CGlobal::num_scroll_page;
+        $limit = 10;
+        $offset = ($pageNo - 1) *$limit;
+        $total = 0;
+        $search = $data = array();
+
+        $search['statics_title'] = addslashes(Request::get('statics_title', ''));
+        $search['field_get'] = '';
+
+        $dataSearch = Statics::searchByCondition($search, $limit, $offset, $total);
+        $paging = $total > 0 ? Pagging::getPager($pageScroll, $pageNo, $total, $limit, $search) : '';
+
+        return view('Statics::content.pageSearch',[
+            'data' => $dataSearch,
+            'search' => $search,
+            'paging' => $paging
+        ]);
+    }
 
 }
