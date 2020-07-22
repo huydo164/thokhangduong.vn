@@ -107,7 +107,9 @@
     }
 
     .menuTop li ul li a {
+        color: white;
         border-bottom: 1px solid #ddd;
+        padding-left: 15px;
     }
 
     .menuTop ul li a {
@@ -158,6 +160,26 @@
     }
     .list-sub-page .list-title{
         margin-top: 10px;
+    }
+    .menuTop ul li.search {
+        display: block;
+    }
+    .search.search-header {
+        display: none;
+    }
+    ul li input.form-control {
+        padding-left: 34px;
+        border-radius: 14px;
+        width: 87%;
+    }
+    ul li button.icon-search {
+        left: 2%;
+    }
+    div#header p.phone {
+        text-align: inherit;
+    }
+    .content .container {
+        padding: 38px 31px;
     }
 }
 

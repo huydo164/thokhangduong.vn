@@ -21,8 +21,7 @@ use App\Library\PHPDev\ThumbImg;
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="search">
-
+                    <div class="search search-header">
                         <form action="{{URL::route('site.pageStaticsSearch')}}" method="GET">
                             <button type="submit" name="submit" class="icon-search"></button>
                             <input type="text" placeholder="tìm kiếm..." class="form-control" name="statics_title">
@@ -39,6 +38,14 @@ use App\Library\PHPDev\ThumbImg;
         <div class="container">
 
             <ul>
+                <li class="search">
+                    <div class="search">
+                        <form action="{{URL::route('site.pageStaticsSearch')}}" method="GET">
+                            <button type="submit" name="submit" class="icon-search"></button>
+                            <input type="text" placeholder="tìm kiếm..." class="form-control" name="statics_title">
+                        </form>
+                    </div>
+                </li>
                 @if(isset($arrCategory) && !empty($arrCategory))
                     @foreach($arrCategory as $cat)
                         @if($cat->category_menu == CGlobal::status_show && $cat->category_parent_id == 0)

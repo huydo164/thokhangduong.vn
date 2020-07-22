@@ -130,7 +130,7 @@ div#header .info input[type="text"] {
     margin: 0
 }
 .menuTop ul li {
-    padding-right: 82px;
+    padding-right: 152px;
     display: inline-block;
     font-weight: normal;
     font-size: 12px;
@@ -148,7 +148,7 @@ div#header .info input[type="text"] {
     text-transform: uppercase;
     color: #6b1216;
     font-weight: bold;
-    padding: 0 22px;
+    /* padding: 0 22px; */
     display: block;
 }
 
@@ -185,6 +185,12 @@ div#header .info input[type="text"] {
     width: 100%;
 
     overflow: hidden;
+}
+.menuTop ul li:last-child {
+    padding-right: 0;
+}
+.menuTop ul li.search {
+    display: none;
 }
 
 /*======== page-statics =========*/
@@ -334,7 +340,7 @@ div#footer .col-md-2 .logo {
 
 /* -----------index---------- */
 .content {
-    background-image: url("http://project.vn/thokhangduong/public/assets/frontend/img/bg.png");
+    background-image: url("http://localhost:8888/thokhangduong.vn/public/assets/frontend/img/bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

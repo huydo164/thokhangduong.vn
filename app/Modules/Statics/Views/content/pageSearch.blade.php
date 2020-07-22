@@ -41,7 +41,7 @@ use App\Library\PHPDev\ThumbImg;
                         @endforeach
                     </div>
                     <div class="col-lg-6 col-md-6">
-
+                        @include('Statics::block.right')
                     </div>
                 </div>
             </div>
