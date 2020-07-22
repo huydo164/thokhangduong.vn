@@ -44,7 +44,7 @@ class BaseStaticsController extends Controller{
         $searchBannerContent['banner_status'] = CGlobal::status_show;
         $searchBannerContent['banner_type'] = 1;
         $searchBannerContent['field_get'] = 'banner_id,banner_title,banner_title_show,banner_image,banner_link,banner_is_target,banner_is_rel,banner_is_run_time,banner_start_time,banner_end_time';
-        $dataBannerContent = Banner::getBannerSite($searchBannerContent, $limit = 1, 'content');
+        $dataBannerContent = Banner::getBannerSite($searchBannerContent, $limit = 1);
         $dataBannerContent = FuncLib::checkBannerShow($dataBannerContent);
         View::share('dataBannerContent', $dataBannerContent);
 
@@ -53,8 +53,22 @@ class BaseStaticsController extends Controller{
         $arrCategory = Category::getAllCategory(0, array(), 0);
         View::share('arrCategory',$arrCategory);
 
-        $textHotline = strip_tags(self::viewShareVal('SITE_HOTLIINE'));
-        View::share('textHotline',$textHotline);
+        $textWeb = strip_tags(self::viewShareVal('SITE_WEB'));
+        View::share('textWeb',$textWeb);
+
+        $arrTextLogo = Info::getItemByKeyword('SITE_LOGO');
+        View::share('arrTextLogo',$arrTextLogo);
+
+
+        $textFooter1 = strip_tags(self::viewShareVal('SITE_FOOTER_TEXT_1'));
+        View::share('textFooter1',$textFooter1);
+        $textFooter2 = strip_tags(self::viewShareVal('SITE_FOOTER_TEXT_2'));
+        View::share('textFooter2',$textFooter2);
+        $textFooter3 = strip_tags(self::viewShareVal('SITE_FOOTER_TEXT_3'));
+        View::share('textFooter3',$textFooter3);
+
+        $textPhone = strip_tags(self::viewShareVal('SITE_PHONE'));
+        View::share('textPhone',$textPhone);
 
         $textaddress = self::viewShareVal('SITE_FOOTER_LEFT');
         View::share('textaddress',$textaddress);
@@ -86,5 +100,15 @@ class BaseStaticsController extends Controller{
             }
         }
        return $str;
+    }
+    public static function viewShareImg($key=''){
+        $str='';
+        if($key != '') {
+            $arrStr = Info::getItemByKeyword($key);
+            if(isset($arrStr->info_id)) {
+                $str = $arrStr->info_img;
+            }
+        }
+        return $str;
     }
 }
