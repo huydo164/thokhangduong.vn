@@ -22,12 +22,37 @@ class StaticsController extends BaseStaticsController{
         $gioithieu = Info::getItemByKeyword('SITE_GIOITHIEU');
         $gioithieu_1 = Info::getItemByKeyword('SITE_GIOITHIEU_1');
         $gioithieu_2 = Info::getItemByKeyword('SITE_GIOITHIEU_2');
+
+        $cat_3 = (int)strip_tags(self::viewShareVal('CAT_ID_3'));
+        $data_cat_3 = [];
+        if ($data_cat_3 > 0){
+            $data_search_3['statics_catid'] = $cat_3;
+            $data_search_3['statics_order_no'] = 'asc';
+            $data_cat_3 = Statics::getFocus($data_search_3, $limit = 10);
+        }
+
+        $cat_4 = (int)strip_tags(self::viewShareVal('CAT_ID_4'));
+        $data_cat_4 = [];
+        if ($data_cat_4 > 0){
+            $data_search_4['statics_catid'] = $cat_4;
+            $data_search_4['statics_order_no'] = 'asc';
+            $data_cat_4 = Statics::getFocus($data_search_4, $limit = 4);
+        }
+
+        $text_tt_1 = self::viewShareVal('TEXT_TinTuc_1');
+        $text_ba = self::viewShareVal('TEXT_BENHAN');
+
         $messages = Utility::messages('messages');
 
         return view('Statics::content.index', [
             'gioithieu' =>$gioithieu,
             'gioithieu_1' =>$gioithieu_1,
             'gioithieu_2' =>$gioithieu_2,
+            'data_cat_3' => $data_cat_3,
+            'text_tt_1' => $text_tt_1,
+            'text_ba' => $text_ba,
+            'messages' => $messages,
+            'data_cat_4' => $data_cat_4,
 
         ]);
     }

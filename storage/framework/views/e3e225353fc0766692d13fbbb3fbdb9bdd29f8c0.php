@@ -79,159 +79,98 @@ use App\Library\PHPDev\ThumbImg;
         <?php endif; ?>
     </div>
     <div class="container">
-        <h3>VIÊM TẮC ĐỘNG MẠCH</h3>
-        <div class="cate">
+        <h3 class="title-index"><?php echo isset($text_tt_1) ? strip_tags($text_tt_1) : ''; ?></h3>
+        <div class="cate cate-bottom">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
+                <?php if(isset($data_cat_3) && !empty($data_cat_3)): ?>
+                    <?php $__currentLoopData = $data_cat_3; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col-md-6 etc">
+                            <a href="<?php echo e(FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)); ?>">
+                                <?php if($key == 0): ?>
+                                    <div class="pic">
+                                        <?php if($item->statics_image != ''): ?>
+                                            <img src="<?php echo e(ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800, 0 , '', true, true)); ?>" alt="">
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="info">
+                                        <p class="title"><?php echo e(strip_tags($item->statics_title)); ?></p>
+                                        <p class="date"><?php echo e(date('d/m/Y', $item->statics_created)); ?></p>
+                                        <p class="article"><?php echo $item->statics_intro; ?></p>
+                                    </div>
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+
                 <div class="col-md-6 small">
                     <ul>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-2.jpg">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="title">Đông y chữa viêm tắc động mạch</p>
-                                    <p class="date">07/09/2020</p>
-                                    <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-2.jpg">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="title">Đông y chữa viêm tắc động mạch</p>
-                                    <p class="date">07/09/2020</p>
-                                    <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-2.jpg">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="title">Đông y chữa viêm tắc động mạch</p>
-                                    <p class="date">07/09/2020</p>
-                                    <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-2.jpg">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="title">Đông y chữa viêm tắc động mạch</p>
-                                    <p class="date">07/09/2020</p>
-                                    <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                                </div>
-                            </div>
-                        </li>
+                        <?php if(isset($data_cat_3) && !empty($data_cat_3)): ?>
+                            <?php $__currentLoopData = $data_cat_3; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php if($key > 0 && $key <5): ?>
+                                    <a href="<?php echo e(FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)); ?>">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <?php if($item->statics_image != ''): ?>
+                                                        <img src="<?php echo e(ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800,0, '', true, true)); ?>" alt="">
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p class="title-right"><?php echo e($item->statics_title); ?></p>
+                                                    <p class="date"><?php echo e(date('d/m/Y', $item->statics_created)); ?></p>
+                                                    <p class="article"><?php echo $item->statics_intro; ?></p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                <?php endif; ?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php endif; ?>
                     </ul>
                 </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
+                <?php if(isset($data_cat_3) && !empty($data_cat_3)): ?>
+                    <?php $__currentLoopData = $data_cat_3; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if($key > 5): ?>
+                            <div class="col-md-6 mgb20">
+                                <a href="<?php echo e(FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)); ?>">
+                                    <div class="pic">
+                                        <?php if($item->statics_image != ''): ?>
+                                            <img src="<?php echo e(ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800,0, '', true, true)); ?>" alt="">
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="info">
+                                        <p class="title"><?php echo e(strip_tags($item->statics_title)); ?></p>
+                                        <p class="date"><?php echo e(date('d/m/Y', $item->statics_created)); ?></p>
+                                        <p class="article"><?php echo $item->statics_intro; ?></p>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <h3>BỆNH ÁN</h3>
+
+        <h3 class="title-index"><?php echo isset($text_ba) ? strip_tags($text_ba) : ''; ?></h3>
         <div class="cate">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
+                <?php if(isset($data_cat_4) && !empty($data_cat_4)): ?>
+                    <?php $__currentLoopData = $data_cat_4; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col-md-6 atc">
+                            <a href="<?php echo e(FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)); ?>">
+                                <div class="pic">
+                                    <img src="<?php echo e(ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800,0, '', true, true)); ?>" alt="">
+                                </div>
+                                <div class="info">
+                                    <p class="title"><?php echo e(strip_tags($item->statics_title)); ?></p>
+                                    <p class="date"><?php echo e(date('d/m/Y', $item->statics_created)); ?></p>
+                                    <p class="article"><?php echo $item->statics_intro; ?></p>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

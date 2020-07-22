@@ -75,159 +75,98 @@ use App\Library\PHPDev\ThumbImg;
         @endif
     </div>
     <div class="container">
-        <h3>VIÊM TẮC ĐỘNG MẠCH</h3>
-        <div class="cate">
+        <h3 class="title-index">{!! isset($text_tt_1) ? strip_tags($text_tt_1) : '' !!}</h3>
+        <div class="cate cate-bottom">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
+                @if(isset($data_cat_3) && !empty($data_cat_3))
+                    @foreach($data_cat_3 as $key => $item)
+                        <div class="col-md-6 etc">
+                            <a href="{{FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)}}">
+                                @if($key == 0)
+                                    <div class="pic">
+                                        @if($item->statics_image != '')
+                                            <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800, 0 , '', true, true) }}" alt="">
+                                        @endif
+                                    </div>
+                                    <div class="info">
+                                        <p class="title">{{ strip_tags($item->statics_title) }}</p>
+                                        <p class="date">{{ date('d/m/Y', $item->statics_created) }}</p>
+                                        <p class="article">{!! $item->statics_intro !!}</p>
+                                    </div>
+                                @endif
+                            </a>
+                        </div>
+                    @endforeach
+                @endif
+
                 <div class="col-md-6 small">
                     <ul>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-2.jpg">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="title">Đông y chữa viêm tắc động mạch</p>
-                                    <p class="date">07/09/2020</p>
-                                    <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-2.jpg">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="title">Đông y chữa viêm tắc động mạch</p>
-                                    <p class="date">07/09/2020</p>
-                                    <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-2.jpg">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="title">Đông y chữa viêm tắc động mạch</p>
-                                    <p class="date">07/09/2020</p>
-                                    <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-2.jpg">
-                                </div>
-                                <div class="col-md-8">
-                                    <p class="title">Đông y chữa viêm tắc động mạch</p>
-                                    <p class="date">07/09/2020</p>
-                                    <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                                </div>
-                            </div>
-                        </li>
+                        @if(isset($data_cat_3) && !empty($data_cat_3))
+                            @foreach($data_cat_3 as $key => $item)
+                                @if($key > 0 && $key <5)
+                                    <a href="{{FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)}}">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    @if($item->statics_image != '')
+                                                        <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800,0, '', true, true) }}" alt="">
+                                                    @endif
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p class="title-right">{{ $item->statics_title }}</p>
+                                                    <p class="date">{{ date('d/m/Y', $item->statics_created) }}</p>
+                                                    <p class="article">{!! $item->statics_intro!!}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                @endif
+                            @endforeach
+                        @endif
                     </ul>
                 </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
+                @if(isset($data_cat_3) && !empty($data_cat_3))
+                    @foreach($data_cat_3 as $key => $item)
+                        @if($key > 5)
+                            <div class="col-md-6 mgb20">
+                                <a href="{{FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)}}">
+                                    <div class="pic">
+                                        @if($item->statics_image != '')
+                                            <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800,0, '', true, true) }}" alt="">
+                                        @endif
+                                    </div>
+                                    <div class="info">
+                                        <p class="title">{{ strip_tags($item->statics_title) }}</p>
+                                        <p class="date">{{ date('d/m/Y', $item->statics_created) }}</p>
+                                        <p class="article">{!! $item->statics_intro !!}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
+                    @endforeach
+                @endif
             </div>
         </div>
-    </div>
-    <div class="container">
-        <h3>BỆNH ÁN</h3>
+
+        <h3 class="title-index">{!! isset($text_ba) ? strip_tags($text_ba) : '' !!}</h3>
         <div class="cate">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="pic">
-                        <img src="http://localhost:8888/thokhangduong.vn/public/uploads/anh-bai-viet-1.jpg" >
-                    </div>
-                    <div class="info">
-                        <p class="title">Đông y chữa viêm tắc động mạch</p>
-                        <p class="date">07/09/2020</p>
-                        <p class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet nunc sed enim semper mollis. Sed congue mollis leo sit amet pretium. Pellentesque lacinia lec</p>
-                    </div>
-                </div>
+                @if(isset($data_cat_4) && !empty($data_cat_4))
+                    @foreach($data_cat_4 as $key => $item)
+                        <div class="col-md-6 atc">
+                            <a href="{{FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)}}">
+                                <div class="pic">
+                                    <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800,0, '', true, true) }}" alt="">
+                                </div>
+                                <div class="info">
+                                    <p class="title">{{ strip_tags($item->statics_title) }}</p>
+                                    <p class="date">{{ date('d/m/Y', $item->statics_created) }}</p>
+                                    <p class="article">{!! $item->statics_intro !!}</p>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
