@@ -1,5 +1,6 @@
 $(document).ready(function ($) {
     STATICS.navigationIcon();
+    SITE.menuHead();
 });
 
 STATICS = {
@@ -16,5 +17,12 @@ STATICS = {
                 backdrop.show();
             }
         })
+    },
+    menuHead: function () {
+        $('.mbButtonMenuL').click(function () {
+            $('.menuTop').removeClass('on');
+            $('.mbButtonMenuL').fadeOut();
+            $('.mbButtonMenu').fadeIn();
+        });
     },
 };

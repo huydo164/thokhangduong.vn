@@ -97,6 +97,10 @@ use App\Library\PHPDev\ThumbImg;
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>
+<<<<<<< HEAD
+=======
+                                                <div class="clearfix"></div>
+>>>>>>> chien
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Nổi bật</label>
