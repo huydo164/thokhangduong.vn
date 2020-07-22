@@ -5,9 +5,8 @@ use App\Library\PHPDev\FuncLib;
 use App\Library\PHPDev\ThumbImg;
 
 ?>
-<<<<<<< HEAD
 {!! isset($messages) && ($messages != '') ? $messages : '' !!}
-=======
+
 <div id="header">
     <div class="info">
         <div class="container">
@@ -78,4 +77,4 @@ use App\Library\PHPDev\ThumbImg;
 
     </div>
 </div>
->>>>>>> chien
+

@@ -13,8 +13,6 @@ use App\Library\PHPDev\ThumbImg;
 @include('Statics::block.footer')
 @stop
 @section('content')
-<<<<<<< HEAD
-=======
 <div class="content">
     <div class="banner">
         @if(isset($dataBannerHead) && !empty($dataBannerHead))
@@ -234,5 +232,5 @@ use App\Library\PHPDev\ThumbImg;
         </div>
     </div>
 </div>
->>>>>>> chien
+
 @stop
