@@ -7,7 +7,6 @@ use App\Library\PHPDev\ThumbImg;
 ?>
 <?php echo isset($messages) && ($messages != '') ? $messages : ''; ?>
 
-
 <div id="header">
     <div class="info">
         <div class="container">
@@ -24,12 +23,16 @@ use App\Library\PHPDev\ThumbImg;
                 </div>
                 <div class="col-md-3">
                     <div class="search">
-                        <form action="" method="GET">
+
+                        <form action="<?php echo e(URL::route('site.pageStaticsSearch')); ?>" method="GET">
                             <button type="submit" name="submit" class="icon-search"></button>
-                            <input type="text" placeholder="tìm kiếm..." class="form-control" name="search">
+                            <input type="text" placeholder="tìm kiếm..." class="form-control" name="statics_title">
                         </form>
                     </div>
                 </div>
+                <button type="button" class="mbButtonMenu navbar-toggle pull-right">
+                    <i class="fa fa-bars fa-2x"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -78,5 +81,4 @@ use App\Library\PHPDev\ThumbImg;
 
     </div>
 </div>
-
 <?php /**PATH E:\wamp64\www\project.vn\thokhangduong\app\Modules/Statics/Views/block/header.blade.php ENDPATH**/ ?>
