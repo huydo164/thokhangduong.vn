@@ -23,6 +23,8 @@ use App\Library\PHPDev\ThumbImg;
                         <li class="active">Tìm kiếm</li>
                     </ul>
                 </div>
+                <h4>Kết quả tìm kiếm</h4>
+                <p class="count"> <?php if(isset($data)  && $data->count(['statics_id']) > 0 ): ?> Tìm thấy <?php echo e($data->count(['statics_id'])); ?> bài viết <?php else: ?> Không tìm thấy bài viết nào <?php endif; ?> </p>
                 <div class="page-search">
                     <div class="row">
                         <div class="col-sm-8 col-lg-8">
@@ -80,6 +82,8 @@ use App\Library\PHPDev\ThumbImg;
                                     <!------col-sm-6 list-page-sub-------->
 
                                 </div>
+                                <!----------row--------->
+
                                 <div class="row mgt20">
                                     <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php if($key > 5 ): ?>
@@ -102,25 +106,22 @@ use App\Library\PHPDev\ThumbImg;
                                         <?php endif; ?>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
+                                <!-------row mgt20------->
                             <?php endif; ?>
                         </div>
-                        <!-------col-sm-8-------->
-                        <div class="col-sm-4 col-lg-4">
+                        <div class="col-sm-4">
                             <?php echo $__env->make('Statics::block.right', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div>
-                        <!------------col-sm-4------------>
                     </div>
-                    <!----------row---------->
+                    <?php if(isset($data) && $data->count() > 1): ?>
+                        <div class="listPaginatePage">
+                            <div class="showListPage"><?php echo $paging; ?></div>
+                        </div>
+                    <?php endif; ?>
                 </div>
-                <?php if(isset($data) && $data->count() > 1): ?>
-                    <div class="listPaginatePage">
-                        <div class="showListPage"><?php echo $paging; ?></div>
-                    </div>
-                <?php endif; ?>
             </div>
         </div>
     </div>
-
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('Statics::layout.html', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\wamp64\www\project.vn\thokhangduong\app\Modules/Statics/Views/content/pageSearch.blade.php ENDPATH**/ ?>

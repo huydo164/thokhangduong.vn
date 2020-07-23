@@ -23,18 +23,12 @@ use App\Library\PHPDev\ThumbImg;
                         <li class="active">Tìm kiếm</li>
                     </ul>
                 </div>
-<<<<<<< HEAD
-                <div class="page-statics">
-                    <h3 class="title-statics">{!! isset($text_tt_1) ? strip_tags($text_tt_1) : '' !!}</h3>
-                    <div class="row">
-                        <div class="col-sm-8">
-                    @if(isset($data) && $data->count() > 1)
-=======
+                <h4>Kết quả tìm kiếm</h4>
+                <p class="count"> @if(isset($data)  && $data->count(['statics_id']) > 0 ) Tìm thấy {{ $data->count(['statics_id']) }} bài viết @else Không tìm thấy bài viết nào @endif </p>
                 <div class="page-search">
                     <div class="row">
                         <div class="col-sm-8 col-lg-8">
                             @if(isset($data) && $data->count() > 1)
->>>>>>> 7612397a4e7026f35d8f8ae45bdf8f6cf2a2f94d
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-lg-6 first-post">
                                         @foreach($data as $key => $item)
@@ -85,6 +79,8 @@ use App\Library\PHPDev\ThumbImg;
                                     <!------col-sm-6 list-page-sub-------->
 
                                 </div>
+                                <!----------row--------->
+
                                 <div class="row mgt20">
                                     @foreach($data as $key => $item)
                                         @if($key > 5 )
@@ -105,45 +101,20 @@ use App\Library\PHPDev\ThumbImg;
                                         @endif
                                     @endforeach
                                 </div>
-
                                 <!-------row mgt20------->
-
-                            </div>
-                            <!-------col-sm-8-------->
-                            @else
-                            @endif
-
-                            <!------------col-sm-4------------>
-                        </div>
-                        <!----------row---------->
-                    <div class="col-sm-4">
-                        @include('Statics::block.right')
-                    </div>
-
-                </div>
-                @if(isset($data) && $data->count() > 1)
-                <div class="listPaginatePage">
-                    <div class="showListPage">{!! $paging !!}</div>
-                </div>
-
                             @endif
                         </div>
-                        <!-------col-sm-8-------->
-                        <div class="col-sm-4 col-lg-4">
+                        <div class="col-sm-4">
                             @include('Statics::block.right')
                         </div>
-                        <!------------col-sm-4------------>
                     </div>
-                    <!----------row---------->
+                    @if(isset($data) && $data->count() > 1)
+                        <div class="listPaginatePage">
+                            <div class="showListPage">{!! $paging !!}</div>
+                        </div>
+                    @endif
                 </div>
-                @if(isset($data) && $data->count() > 1)
-                    <div class="listPaginatePage">
-                        <div class="showListPage">{!! $paging !!}</div>
-                    </div>
-
-                @endif
             </div>
         </div>
     </div>
-
 @stop

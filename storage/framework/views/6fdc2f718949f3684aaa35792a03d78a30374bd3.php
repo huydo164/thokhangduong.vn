@@ -151,9 +151,10 @@ use App\Library\PHPDev\ThumbImg;
                 <?php endif; ?>
             </div>
         </div>
-
-        <h3 class="title-index"><?php echo isset($text_ba) ? strip_tags($text_ba) : ''; ?></h3>
-        <div class="cate">
+    </div>
+    <div class="container">
+        <h3>BỆNH ÁN</h3>
+        <div class="cate cate-1">
             <div class="row">
                 <?php if(isset($data_cat_4) && !empty($data_cat_4)): ?>
                     <?php $__currentLoopData = $data_cat_4; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

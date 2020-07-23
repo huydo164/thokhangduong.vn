@@ -360,6 +360,9 @@ div#footer .col-md-2 .logo {
 
 
 /* -----------index---------- */
+.content .container {
+    padding-top: 25px;
+}
 .content {
     background-image: url("../img/bg.png");
     background-repeat: no-repeat;
@@ -462,3 +465,6 @@ p.limit {
 }
 
 /*========== page-search ==========*/
+.count{
+    margin-bottom: 30px;
+}

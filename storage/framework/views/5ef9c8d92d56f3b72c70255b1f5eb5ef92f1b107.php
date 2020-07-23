@@ -18,6 +18,7 @@ use App\Library\PHPDev\ThumbImg;
             <div class="page-neo">
                 <ul class="breadcrumb">
                     <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
                         <a href="<?php echo e(FuncLib::getBaseURL()); ?>">Trang chủ</a>
                     </li>
                     <?php if(isset($dataCate->category_id)): ?>
