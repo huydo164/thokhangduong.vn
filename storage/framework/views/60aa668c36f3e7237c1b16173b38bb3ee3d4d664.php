@@ -29,8 +29,13 @@ use App\Library\PHPDev\ThumbImg;
                 </ul>
             </div>
             <div class="page-statics">
+                <h3 class="title-statics">
+                    <?php if($dataCate->category_id): ?>
+                        <?php echo e($dataCate->category_title); ?>
+
+                    <?php endif; ?>
+                </h3>
                 <?php if($data->count() > 1): ?>
-                    <h3 class="title-statics"><?php echo isset($text_tt_1) ? strip_tags($text_tt_1) : ''; ?></h3>
                     <div class="row">
                         <div class="col-sm-8">
                             <div class="row">

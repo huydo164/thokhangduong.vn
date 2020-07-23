@@ -225,6 +225,8 @@ class StaticsController extends BaseStaticsController{
         $search = $data = array();
 
         $search['statics_title'] = addslashes(Request::get('statics_title', ''));
+        $search['statics_status'] = (int)Request::get('statics_status', -1);
+        $search['submit'] = (int)Request::get('submit', 0);
         $search['field_get'] = '';
 
 
@@ -244,6 +246,7 @@ class StaticsController extends BaseStaticsController{
             $data_cat_2 = Statics::getFocus($data_search_2, $limit = 2);
         }
 
+
         if($search['statics_title'] == '')
         {
             return view('Statics::content.pageSearch',[
@@ -253,6 +256,7 @@ class StaticsController extends BaseStaticsController{
         }
         $dataSearch = Statics::searchByCondition($search, $limit, $offset, $total);
         $paging = $total > 0 ? Pagging::getPager($pageScroll, $pageNo, $total, $limit, $search) : '';
+
 
         return view('Statics::content.pageSearch',[
             'data' => $dataSearch,
