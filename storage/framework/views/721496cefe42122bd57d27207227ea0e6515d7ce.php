@@ -37,7 +37,6 @@ use App\Library\PHPDev\ThumbImg;
     </div>
     <div class="menuTop">
         <div class="container">
-
             <ul>
                 <li class="search">
                     <div class="search">

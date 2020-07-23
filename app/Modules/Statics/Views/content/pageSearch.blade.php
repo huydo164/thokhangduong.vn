@@ -24,10 +24,10 @@ use App\Library\PHPDev\ThumbImg;
                     </ul>
                 </div>
                 <div class="page-statics">
-                    @if($data->count() > 1)
-                        <h3 class="title-statics">{!! isset($text_tt_1) ? strip_tags($text_tt_1) : '' !!}</h3>
-                        <div class="row">
-                            <div class="col-sm-8">
+                    <h3 class="title-statics">{!! isset($text_tt_1) ? strip_tags($text_tt_1) : '' !!}</h3>
+                    <div class="row">
+                        <div class="col-sm-8">
+                    @if(isset($data) && $data->count() > 1)
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-lg-6 first-post">
                                         @foreach($data as $key => $item)
@@ -104,19 +104,22 @@ use App\Library\PHPDev\ThumbImg;
 
                             </div>
                             <!-------col-sm-8-------->
+                            @else
+                            @endif
 
-                            <div class="col-sm-4">
-                                @include('Statics::block.right')
-                            </div>
                             <!------------col-sm-4------------>
                         </div>
                         <!----------row---------->
+                    <div class="col-sm-4">
+                        @include('Statics::block.right')
+                    </div>
 
-                    @endif
                 </div>
+                @if(isset($data) && $data->count() > 1)
                 <div class="listPaginatePage">
                     <div class="showListPage">{!! $paging !!}</div>
                 </div>
+                @endif
             </div>
         </div>
     </div>

@@ -24,10 +24,10 @@ use App\Library\PHPDev\ThumbImg;
                     </ul>
                 </div>
                 <div class="page-statics">
-                    <?php if($data->count() > 1): ?>
-                        <h3 class="title-statics"><?php echo isset($text_tt_1) ? strip_tags($text_tt_1) : ''; ?></h3>
-                        <div class="row">
-                            <div class="col-sm-8">
+                    <h3 class="title-statics"><?php echo isset($text_tt_1) ? strip_tags($text_tt_1) : ''; ?></h3>
+                    <div class="row">
+                        <div class="col-sm-8">
+                    <?php if(isset($data) && $data->count() > 1): ?>
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-lg-6 first-post">
                                         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -106,19 +106,22 @@ use App\Library\PHPDev\ThumbImg;
 
                             </div>
                             <!-------col-sm-8-------->
+                            <?php else: ?>
+                            <?php endif; ?>
 
-                            <div class="col-sm-4">
-                                <?php echo $__env->make('Statics::block.right', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                            </div>
                             <!------------col-sm-4------------>
                         </div>
                         <!----------row---------->
+                    <div class="col-sm-4">
+                        <?php echo $__env->make('Statics::block.right', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    </div>
 
-                    <?php endif; ?>
                 </div>
+                <?php if(isset($data) && $data->count() > 1): ?>
                 <div class="listPaginatePage">
                     <div class="showListPage"><?php echo $paging; ?></div>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
