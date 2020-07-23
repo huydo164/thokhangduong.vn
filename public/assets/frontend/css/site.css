@@ -414,3 +414,6 @@ p.limit {
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
+.cate.cate-1 {
+    border-bottom: none;
+}

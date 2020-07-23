@@ -189,7 +189,7 @@ use App\Library\PHPDev\ThumbImg;
     </div>
     <div class="container">
         <h3>BỆNH ÁN</h3>
-        <div class="cate">
+        <div class="cate cate-1">
             <div class="row">
                 <div class="col-md-6">
                     <div class="pic">
