@@ -24,8 +24,10 @@ use App\Library\PHPDev\ThumbImg;
                 <div class="col-md-3">
                     <div class="search search-header">
                         <form action="<?php echo e(URL::route('site.pageStaticsSearch')); ?>" method="GET">
-                            <button type="submit" name="submit" class="icon-search"></button>
-                            <input type="text" placeholder="tìm kiếm..." class="form-control" name="statics_title">
+                            <input type="text" placeholder="tìm kiếm..." class="form-control" value="" name="statics_title">
+                            <button type="submit" class="icon-search"></button>
+                            <?php echo csrf_field(); ?>
+
                         </form>
                     </div>
                 </div>

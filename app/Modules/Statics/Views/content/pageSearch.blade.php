@@ -23,11 +23,10 @@ use App\Library\PHPDev\ThumbImg;
                         <li class="active">Tìm kiếm</li>
                     </ul>
                 </div>
-                <div class="page-statics">
-                    @if($data->count() > 1)
-                        <h3 class="title-statics">{!! isset($text_tt_1) ? strip_tags($text_tt_1) : '' !!}</h3>
-                        <div class="row">
-                            <div class="col-sm-8">
+                <div class="page-search">
+                    <div class="row">
+                        <div class="col-sm-8 col-lg-8">
+                            @if(isset($data) && $data->count() > 1)
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-lg-6 first-post">
                                         @foreach($data as $key => $item)
@@ -43,7 +42,7 @@ use App\Library\PHPDev\ThumbImg;
                                                     </h4>
                                                     <div class="date">{{ date('d/m/Y', $item->statics_created)  }}</div>
                                                     <div class="post-intro">
-                                                        <p class="limit">{!! $item->statics_intro !!}</p>
+                                                        {!! $item->statics_intro !!}
                                                     </div>
                                                 </a>
                                             @endif
@@ -67,7 +66,7 @@ use App\Library\PHPDev\ThumbImg;
                                                             <h4 class="list-title">{{ strip_tags($item->statics_title) }}</h4>
                                                             <div class="date">{{ date('d/m/Y', $item->statics_created) }}</div>
                                                             <div class="list-intro">
-                                                                <p class="limit">{!! $item->statics_intro !!}</p>
+                                                                {!! $item->statics_intro !!}
                                                             </div>
                                                         </div>
                                                     </a>
@@ -78,8 +77,6 @@ use App\Library\PHPDev\ThumbImg;
                                     <!------col-sm-6 list-page-sub-------->
 
                                 </div>
-                                <!----------row--------->
-
                                 <div class="row mgt20">
                                     @foreach($data as $key => $item)
                                         @if($key > 5 )
@@ -93,30 +90,28 @@ use App\Library\PHPDev\ThumbImg;
                                                     </h4>
                                                     <div class="date">{{ date('d/m/Y', $item->statics_created) }}</div>
                                                     <div class="post-intro">
-                                                        <p class="limit">{!! $item->statics_intro !!}</p>
+                                                        {!! $item->statics_intro !!}
                                                     </div>
                                                 </a>
                                             </div>
                                         @endif
                                     @endforeach
                                 </div>
-                                <!-------row mgt20------->
-
-                            </div>
-                            <!-------col-sm-8-------->
-
-                            <div class="col-sm-4">
-                                @include('Statics::block.right')
-                            </div>
-                            <!------------col-sm-4------------>
+                            @endif
                         </div>
-                        <!----------row---------->
-
-                    @endif
+                        <!-------col-sm-8-------->
+                        <div class="col-sm-4 col-lg-4">
+                            @include('Statics::block.right')
+                        </div>
+                        <!------------col-sm-4------------>
+                    </div>
+                    <!----------row---------->
                 </div>
-                <div class="listPaginatePage">
-                    <div class="showListPage">{!! $paging !!}</div>
-                </div>
+                @if(isset($data) && $data->count() > 1)
+                    <div class="listPaginatePage">
+                        <div class="showListPage">{!! $paging !!}</div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
