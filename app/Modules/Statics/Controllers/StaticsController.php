@@ -225,6 +225,8 @@ class StaticsController extends BaseStaticsController{
         $search = $data = array();
 
         $search['statics_title'] = addslashes(Request::get('statics_title', ''));
+        $search['statics_status'] = (int)Request::get('statics_status', -1);
+        $search['submit'] = (int)Request::get('submit', 0);
         $search['field_get'] = '';
 
         $dataSearch = Statics::searchByCondition($search, $limit, $offset, $total);
@@ -243,6 +245,14 @@ class StaticsController extends BaseStaticsController{
             $data_search_2['statics_catid'] = $cat_2;
             $data_search_2['statics_order_no'] = 'asc';
             $data_cat_2 = Statics::getFocus($data_search_2, $limit = 2);
+        }
+
+        if ($search['statics_title'] == ''){
+            return view('Statics::content.pageSearch',[
+
+                'data_cat_1' => $data_cat_1,
+                'data_cat_2' => $data_cat_2
+            ]);
         }
 
         return view('Statics::content.pageSearch',[
