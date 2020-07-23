@@ -30,10 +30,10 @@ use App\Library\PHPDev\ThumbImg;
                {!! $gioithieu->info_intro !!}
             </p>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4">
                     <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_INFO, $gioithieu->info_id, $gioithieu->info_img, 800, 0, '', true, true) }}" alt="">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 col-sm-8">
                     <p class="artice">{!! strip_tags($gioithieu->info_content)  !!}</p>
                 </div>
 
@@ -44,10 +44,10 @@ use App\Library\PHPDev\ThumbImg;
                 {!! $gioithieu_1->info_title !!}
             </p>
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 col-sm-8">
                     <p class="artice"> {!! strip_tags($gioithieu_1->info_content)  !!}</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4">
                     <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_INFO, $gioithieu_1->info_id, $gioithieu_1->info_img, 800, 0, '', true, true) }}" alt="">
                 </div>
 
@@ -79,10 +79,10 @@ use App\Library\PHPDev\ThumbImg;
         <div class="cate cate-bottom">
             <div class="row">
                 @if(isset($data_cat_3) && !empty($data_cat_3))
-                    @foreach($data_cat_3 as $key => $item)
-                        <div class="col-md-6 etc">
-                            <a href="{{FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)}}">
-                                @if($key == 0)
+                    <div class="col-md-6 etc">
+                        @foreach($data_cat_3 as $key => $item)
+                            @if($key == 0)
+                                <a href="{{FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)}}">
                                     <div class="pic">
                                         @if($item->statics_image != '')
                                             <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800, 0 , '', true, true) }}" alt="">
@@ -93,10 +93,10 @@ use App\Library\PHPDev\ThumbImg;
                                         <p class="date">{{ date('d/m/Y', $item->statics_created) }}</p>
                                         <p class="article">{!! $item->statics_intro !!}</p>
                                     </div>
-                                @endif
-                            </a>
-                        </div>
-                    @endforeach
+                                </a>
+                            @endif
+                        @endforeach
+                    </div>
                 @endif
 
                 <div class="col-md-6 small">
@@ -107,12 +107,12 @@ use App\Library\PHPDev\ThumbImg;
                                     <a href="{{FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)}}">
                                         <li>
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-md-4 col-sm-4">
                                                     @if($item->statics_image != '')
                                                         <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800,0, '', true, true) }}" alt="">
                                                     @endif
                                                 </div>
-                                                <div class="col-md-8">
+                                                <div class="col-md-8 col-sm-8">
                                                     <p class="title-right">{{ $item->statics_title }}</p>
                                                     <p class="date">{{ date('d/m/Y', $item->statics_created) }}</p>
                                                     <p class="article">{!! $item->statics_intro!!}</p>
@@ -128,7 +128,7 @@ use App\Library\PHPDev\ThumbImg;
                 @if(isset($data_cat_3) && !empty($data_cat_3))
                     @foreach($data_cat_3 as $key => $item)
                         @if($key > 5)
-                            <div class="col-md-6 mgb20">
+                            <div class="col-md-6 mgb20 mgb40">
                                 <a href="{{FuncLib::buildLinkDetailStatic($item->statics_id, $item->statics_title)}}">
                                     <div class="pic">
                                         @if($item->statics_image != '')
