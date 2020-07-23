@@ -7,12 +7,50 @@
     .first-post{
         margin-bottom: 25px;
     }
+    .menuTop ul li {
+        padding-right: 101px;
+        display: inline-block;
+        font-weight: normal;
+        font-size: 12px;
+        vertical-align: top;
+        line-height: 40px;
+        float: left;
+        margin: 0;
+        position: relative;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
     .first-post{
         margin-bottom: 25px;
     }
+    .menuTop ul li {
+        padding-right: 46px;
+        display: inline-block;
+        font-weight: normal;
+        font-size: 12px;
+        vertical-align: top;
+        line-height: 40px;
+        float: left;
+        margin: 0;
+        position: relative;
+    }
+    div#header p.phone {
+        text-align: center;
+    }
+    div#header .web {
+        text-align: center;
+    }
+    .info .container {
+        padding-bottom: 25px;
+    }
+    button.icon-search {
+        left: 19%;
+    }
+    div#footer .logo img  {
+        width: 25%;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -181,6 +219,10 @@
     .content .container {
         padding: 38px 31px;
     }
+    div#footer .logo img  {
+        width: 25%;
+    }
+
 }
 
 @media (max-width: 600px) {
