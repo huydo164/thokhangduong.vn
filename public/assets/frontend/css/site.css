@@ -442,6 +442,9 @@ p.limit {
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
-.pots{
-    margin-bottom: 60px;
+.pots {
+            margin-bottom: 60px;
+        }
+.cate.cate-1 {
+    border-bottom: none;
 }

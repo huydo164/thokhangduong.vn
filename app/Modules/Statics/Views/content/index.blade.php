@@ -147,9 +147,12 @@ use App\Library\PHPDev\ThumbImg;
                 @endif
             </div>
         </div>
-
         <h3 class="title-index">{!! isset($text_ba) ? strip_tags($text_ba) : '' !!}</h3>
         <div class="cate">
+    </div>
+    <div class="container">
+        <h3>BỆNH ÁN</h3>
+        <div class="cate cate-1">
             <div class="row">
                 @if(isset($data_cat_4) && !empty($data_cat_4))
                     @foreach($data_cat_4 as $key => $item)
