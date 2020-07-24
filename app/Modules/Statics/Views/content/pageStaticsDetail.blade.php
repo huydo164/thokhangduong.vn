@@ -27,17 +27,12 @@ use App\Library\PHPDev\ThumbImg;
                         @endif
                     </ul>
                 </div>
+                <h4 class="title-detail">{{ $data->statics_title }}</h4>
                 <div class="row">
                     <div class="col-sm-8">
                         <div class="show-detail">
-                            <h4 class="title-detail">{{ $data->statics_title }}</h4>
-                            <div class="img-detail">
-                                @if($data->statics_image != '')
-                                    <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $data->statics_id, $data->statics_image, 800, 0 , '', true, true) }}" alt="">
-                                @endif
-                            </div>
                             <div class="cont-detail">
-                                {!! $data->statics_content !!}
+                                {!! stripcslashes($data->statics_content)   !!}
                             </div>
                         </div>
                         <div class="more-post">
@@ -50,7 +45,7 @@ use App\Library\PHPDev\ThumbImg;
                                                 <div class="col-lg-3">
                                                     <div class="list-img">
                                                         @if($item->statics_image != '')
-                                                            <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800, 0, '', true, true) }}" alt="">
+                                                            <img src="{{ ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 1000, 0, '', true, true) }}" alt="">
                                                         @endif
                                                     </div>
                                                 </div>

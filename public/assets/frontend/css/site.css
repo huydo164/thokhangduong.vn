@@ -299,13 +299,15 @@ div#header .info input[type="text"] {
 .title-detail{
     color: #671114;
     font-weight: bold;
-    font-size: 19px;
+    font-size: 22px;
     margin-bottom: 21px;
 }
 .cont-detail{
-    margin-top: 31px;
     text-align: justify;
     border-bottom: 2px solid #671114;
+}
+.cont-detail img{
+    width: 100%;
 }
 .more-post{
     margin-top: 20px;

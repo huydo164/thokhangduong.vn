@@ -15,11 +15,18 @@ use App\Library\PHPDev\ThumbImg;
 <?php $__env->startSection('content'); ?>
 <div class="content">
     <div class="banner">
-        <?php if(isset($dataBannerHead) && !empty($dataBannerHead)): ?>
-            <?php $__currentLoopData = $dataBannerHead; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <img src="<?php echo e(ThumbImg::thumbBaseNormal(CGlobal::FOLDER_BANNER, $item['banner_id'], $item['banner_image'], 2000, 0, '', true, true, false)); ?>" alt="">
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        <?php endif; ?>
+        <div id="owl-example" class="owl-carousel">
+
+                <?php if(isset($dataBannerHead) && !empty($dataBannerHead)): ?>
+                    <?php $__currentLoopData = $dataBannerHead; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div>
+                        <img src="<?php echo e(ThumbImg::thumbBaseNormal(CGlobal::FOLDER_BANNER, $item['banner_id'], $item['banner_image'], 2000, 0, '', true, true, false)); ?>" alt="">
+                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+
+        </div>
+
     </div>
     <div class="container">
         <div class="pots">

@@ -28,17 +28,12 @@ use App\Library\PHPDev\ThumbImg;
                         <?php endif; ?>
                     </ul>
                 </div>
+                <h4 class="title-detail"><?php echo e($data->statics_title); ?></h4>
                 <div class="row">
                     <div class="col-sm-8">
                         <div class="show-detail">
-                            <h4 class="title-detail"><?php echo e($data->statics_title); ?></h4>
-                            <div class="img-detail">
-                                <?php if($data->statics_image != ''): ?>
-                                    <img src="<?php echo e(ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $data->statics_id, $data->statics_image, 800, 0 , '', true, true)); ?>" alt="">
-                                <?php endif; ?>
-                            </div>
                             <div class="cont-detail">
-                                <?php echo $data->statics_content; ?>
+                                <?php echo stripcslashes($data->statics_content); ?>
 
                             </div>
                         </div>
@@ -52,7 +47,7 @@ use App\Library\PHPDev\ThumbImg;
                                                 <div class="col-lg-3">
                                                     <div class="list-img">
                                                         <?php if($item->statics_image != ''): ?>
-                                                            <img src="<?php echo e(ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 800, 0, '', true, true)); ?>" alt="">
+                                                            <img src="<?php echo e(ThumbImg::thumbBaseNormal(CGlobal::FOLDER_STATICS, $item->statics_id, $item->statics_image, 1000, 0, '', true, true)); ?>" alt="">
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>

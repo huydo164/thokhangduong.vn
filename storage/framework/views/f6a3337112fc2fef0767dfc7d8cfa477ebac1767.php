@@ -21,6 +21,7 @@ use App\Library\PHPDev\FuncLib;
     <script src="<?php echo e(URL::asset('assets/focus/js/jquery.2.1.1.min.js')); ?>"></script>
     <script src="<?php echo e(URL::asset('assets/libs/bootstrap/js/bootstrap.min.js')); ?>"></script>
     <script src="<?php echo e(URL::asset('assets/libs/number/autoNumeric.js')); ?>"></script>
+
 	<?php echo CGlobal::$extraHeaderCSS; ?>
 
 	<?php echo CGlobal::$extraHeaderJS; ?>
@@ -40,5 +41,15 @@ use App\Library\PHPDev\FuncLib;
 <?php echo CGlobal::$extraFooterJS; ?>
 
 </body>
+<script>
+    $("#owl-example").owlCarousel({
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        items:1,
+        autoPlay: 1000,
+        loop:true,
+        animateOut: 'slideOutDown',
+    });
+</script>
 </html>
 <?php /**PATH E:\wamp64\www\project.vn\thokhangduong\app\Modules/Statics/Views/layout/html.blade.php ENDPATH**/ ?>
