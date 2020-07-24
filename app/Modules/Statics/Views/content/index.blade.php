@@ -15,11 +15,16 @@ use App\Library\PHPDev\ThumbImg;
 @section('content')
 <div class="content">
     <div class="banner">
-        @if(isset($dataBannerHead) && !empty($dataBannerHead))
-            @foreach($dataBannerHead as $item)
-                <img src="{{ThumbImg::thumbBaseNormal(CGlobal::FOLDER_BANNER, $item['banner_id'], $item['banner_image'], 2000, 0, '', true, true, false)}}" alt="">
-            @endforeach
-        @endif
+        <div id="owl-example" class="owl-carousel">
+            <div>
+                @if(isset($dataBannerHead) && !empty($dataBannerHead))
+                    @foreach($dataBannerHead as $item)
+                        <img src="{{ThumbImg::thumbBaseNormal(CGlobal::FOLDER_BANNER, $item['banner_id'], $item['banner_image'], 2000, 0, '', true, true, false)}}" alt="">
+                    @endforeach
+                @endif
+            </div>
+        </div>
+
     </div>
     <div class="container">
         <div class="pots">
