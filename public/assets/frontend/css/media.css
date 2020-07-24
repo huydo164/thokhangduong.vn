@@ -228,6 +228,10 @@
     .page-neo{
         margin-top: 0;
     }
+    .form-dk{
+        width: 100%;
+        margin: auto;
+    }
 }
 
 @media (max-width: 600px) {

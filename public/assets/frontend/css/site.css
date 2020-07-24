@@ -468,3 +468,35 @@ p.limit {
 .count{
     margin-bottom: 30px;
 }
+
+/*======== page-contact ==============*/
+.page-contact p{
+    font-size: 16px;
+}
+.page-contact strong, .page-contact .phone, .page-contact h3{
+    font-weight: bold;
+}
+.form-dk{
+    width: 50%;
+    margin: 50px auto;
+}
+.form-dk .btn-primary{
+    border: none;
+    background: #2c2c2c;
+    transition: all .3s ease;
+}
+.form-dk .btn-primary:hover{
+    background: #4a4a4a;
+}
+#resetButton{
+    margin-left: 10px;
+}
+.form-dk span{
+    color: red;
+}
+#contentBox{
+    height: 133px;
+}
+.alert{
+    margin-bottom: 0;
+}

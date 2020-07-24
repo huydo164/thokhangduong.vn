@@ -7,6 +7,7 @@ use App\Library\PHPDev\CGlobal;
 use App\Library\PHPDev\Pagging;
 use App\Library\PHPDev\Utility;
 use App\Modules\Models\Category;
+use App\Modules\Models\Contact;
 use App\Modules\Models\Info;
 use App\Modules\Models\Statics;
 use Illuminate\Support\Facades\Redirect;
@@ -264,6 +265,66 @@ class StaticsController extends BaseStaticsController{
             'data_cat_1' => $data_cat_1,
             'data_cat_2' => $data_cat_2
         ]);
+    }
+
+    public function pageContact($catid){
+        $dataCate = array();
+        if ($catid > 0){
+            $dataCate = Category::getById($catid);
+        }
+
+        $text_1 = self::viewShareVal('TEXT_1');
+        $text_2 = self::viewShareVal('TEXT_2');
+        $text_3 = self::viewShareVal('TEXT_3');
+        $text_4 = self::viewShareVal('TEXT_4');
+        $text_5 = self::viewShareVal('TEXT_5');
+        $text_6 = self::viewShareVal('TEXT_6');
+        $text_7 = self::viewShareVal('TEXT_7');
+
+        return view('Statics::content.pageContact',[
+            'dataCate' => $dataCate,
+            'text_1' => $text_1,
+            'text_2' => $text_2,
+            'text_3' => $text_3,
+            'text_4' => $text_4,
+            'text_5' => $text_5,
+            'text_6' => $text_6,
+            'text_7' => $text_7,
+
+        ]);
+    }
+
+    public function pageContactPost(){
+        if (!empty($_POST)){
+           $contact_name  = addslashes(Request::get('contact_name', ''));
+           $contact_phone = addslashes(Request::get('contact_phone', ''));
+           $contact_email = addslashes(Request::get('contact_email', ''));
+           $contact_local = addslashes(Request::get('contact_local', ''));
+           $contact_content = addslashes(Request::get('contact_content', ''));
+           $contact_created = time();
+
+           if ($contact_name != '' && $contact_phone != '' && $contact_content != ''){
+               $dataInput = array(
+                   'contact_name' => $contact_name,
+                   'contact_phone' => $contact_phone,
+                   'contact_email' => $contact_email,
+                   'contact_local' => $contact_email,
+                   'contact_content' => $contact_content,
+                   'contact_status' => 1,
+                   'contact_created' => $contact_created,
+               );
+               $query = Contact::addData($dataInput);
+
+               if ($query > 0){
+                   Utility::messages('messages', 'Cảm ơn bạn đã đăng ký. Chúng tôi sẽ liên hệ với bạn sớm nhất');
+                   return Redirect::route('SIndex');
+               }
+           }
+           else{
+               Utility::messages('messages' , 'Thông tin liên hệ chưa chính sác. Bạn hãy đăng ký lại!');
+               return Redirect::route('SIndex');
+           }
+        }
     }
 
 }
