@@ -20,6 +20,7 @@ use App\Library\PHPDev\FuncLib;
     <script src="{{URL::asset('assets/focus/js/jquery.2.1.1.min.js')}}"></script>
     <script src="{{URL::asset('assets/libs/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{URL::asset('assets/libs/number/autoNumeric.js')}}"></script>
+
 	{!! CGlobal::$extraHeaderCSS !!}
 	{!! CGlobal::$extraHeaderJS !!}
     <script type="text/javascript">var BASE_URL='{{FuncLib::getBaseUrl()}}';</script>
@@ -35,4 +36,14 @@ use App\Library\PHPDev\FuncLib;
 {!! CGlobal::$extraFooterCSS !!}
 {!! CGlobal::$extraFooterJS !!}
 </body>
+<script>
+    $("#owl-example").owlCarousel({
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        items:1,
+        autoPlay: 1000,
+        loop:true,
+        animateOut: 'slideOutDown',
+    });
+</script>
 </html>

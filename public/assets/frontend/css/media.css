@@ -121,7 +121,7 @@
         min-width: 100%;
         z-index: 999;
         position: relative;
-        background: #6e000b
+        background: #fae6b4;
     }
 
     .menuTop li ul li {
@@ -130,7 +130,7 @@
     }
 
     .menuTop li ul li a {
-        color: white;
+        color: #671016;
         border-bottom: 1px solid #ddd;
         padding-left: 15px;
     }
@@ -202,7 +202,7 @@
         text-align: inherit;
     }
     .content .container {
-        padding: 38px 31px;
+        padding: 38px 31px 0px 31px;
     }
     div#footer .logo img  {
         width: 25%;
@@ -227,6 +227,9 @@
     }
     .page-neo{
         margin-top: 0;
+    }
+    p.artice1 {
+        margin-bottom: 0px;
     }
 }
 
